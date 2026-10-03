@@ -32,8 +32,13 @@
       box-sizing: border-box;
     }
 
+    html {
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
+
       background:
         radial-gradient(
           circle at 10% 10%,
@@ -97,6 +102,9 @@
       letter-spacing: .2em;
 
       color: var(--wine);
+
+      position: relative;
+      z-index: 20;
     }
 
     header span:last-child {
@@ -114,6 +122,8 @@
       min-height: 720px;
 
       padding: 70px 7vw 90px;
+
+      z-index: 1;
     }
 
 
@@ -140,6 +150,10 @@
       letter-spacing: -.1em;
 
       user-select: none;
+
+      pointer-events: none;
+
+      z-index: 0;
     }
 
 
@@ -269,6 +283,8 @@
       z-index: 1;
 
       overflow: hidden;
+
+      pointer-events: none;
     }
 
     .red-strip::before {
@@ -289,6 +305,8 @@
       transform: rotate(-29deg);
 
       filter: blur(2px);
+
+      pointer-events: none;
     }
 
 
@@ -310,6 +328,8 @@
       z-index: 5;
 
       color: var(--paper);
+
+      pointer-events: none;
     }
 
     .us-big {
@@ -474,6 +494,10 @@
       border-radius: 50%;
 
       opacity: .8;
+
+      pointer-events: none;
+
+      z-index: 0;
     }
 
     .ornament::before,
@@ -488,6 +512,8 @@
       border: 1px solid var(--red);
 
       border-radius: 50%;
+
+      pointer-events: none;
     }
 
     .ornament::after {
@@ -512,6 +538,10 @@
       font-family: "Bodoni Moda", serif;
 
       z-index: 10;
+
+      pointer-events: none;
+
+      user-select: none;
     }
 
     .spark.one {
@@ -550,6 +580,12 @@
       align-items: center;
 
       justify-content: space-between;
+
+      position: relative;
+
+      z-index: 50;
+
+      background: var(--paper);
     }
 
     footer p {
@@ -564,6 +600,18 @@
     }
 
     .next {
+
+      position: relative;
+
+      z-index: 100;
+
+      display: inline-block;
+
+      pointer-events: auto;
+
+      touch-action: manipulation;
+
+      cursor: pointer;
 
       text-decoration: none;
 
@@ -682,11 +730,30 @@
 
       footer {
         padding: 17px 20px;
+
         justify-content: flex-end;
+
+        position: relative;
+
+        z-index: 50;
       }
 
       footer p {
         display: none;
+      }
+
+      .next {
+        position: relative;
+
+        z-index: 100;
+
+        min-height: 46px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
       }
     }
 
