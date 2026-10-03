@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For Rose — The End</title>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@400;500&family=Italianno&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background: #f7eee4;
+
+            color: #5b1724;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        .final-page {
+
+            min-height: 100vh;
+
+            padding:
+                25px 7vw 35px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .final-page::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 14px;
+
+            border:
+                1px solid
+                rgba(104, 20, 35, 0.35);
+
+            pointer-events: none;
+        }
+
+
+        .final-page::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 21px;
+
+            border:
+                1px solid
+                rgba(104, 20, 35, 0.12);
+
+            pointer-events: none;
+        }
+
+
+
+        /* =========================
+           TOP
+        ========================= */
+
+
+        .final-top {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                5px 3px;
+        }
+
+
+        .final-top span {
+
+            font-size: 8px;
+
+            letter-spacing: 0.25em;
+
+            text-transform:
+                uppercase;
+
+            color: #927579;
+        }
+
+
+        .final-top strong {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            color: #8a1c34;
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+
+        .final-hero {
+
+            min-height:
+                88vh;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-align:
+                center;
+
+            position:
+                relative;
+
+            z-index: 2;
+
+            padding:
+                70px 20px;
+        }
+
+
+        .final-kicker {
+
+            font-size: 8px;
+
+            letter-spacing:
+                0.35em;
+
+            text-transform:
+                uppercase;
+
+            color: #8a1c34;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .final-hero h1 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(65px, 12vw, 150px);
+
+            line-height:
+                0.78;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                -0.06em;
+
+            color:
+                #681728;
+        }
+
+
+        .final-hero h1 span {
+
+            display: block;
+
+            color:
+                #8a1c34;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                0.65em;
+
+            font-weight:
+                normal;
+
+            letter-spacing:
+                0;
+
+            transform:
+                rotate(-5deg);
+
+            margin-top:
+                20px;
+        }
+
+
+        .final-intro {
+
+            max-width:
+                530px;
+
+            margin-top:
+                50px;
+
+            font-size:
+                12px;
+
+            line-height:
+                2;
+
+            color:
+                #755b60;
+        }
+
+
+        .final-script {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                38px;
+
+            color:
+                #8a1c34;
+
+            margin-top:
+                28px;
+
+            transform:
+                rotate(-3deg);
+        }
+
+
+
+        /* =========================
+           HEART
+        ========================= */
+
+
+        .final-heart {
+
+            width:
+                70px;
+
+            height:
+                70px;
+
+            margin-top:
+                45px;
+
+            position:
+                relative;
+
+            transform:
+                rotate(-45deg);
+
+            animation:
+                heartbeat 2.4s ease-in-out infinite;
+        }
+
+
+        .final-heart::before,
+        .final-heart::after {
+
+            content: "";
+
+            position: absolute;
+
+            width:
+                70px;
+
+            height:
+                70px;
+
+            background:
+                #8a1c34;
+
+            border-radius:
+                50%;
+        }
+
+
+        .final-heart {
+
+            background:
+                #8a1c34;
+        }
+
+
+        .final-heart::before {
+
+            top:
+                -35px;
+
+            left:
+                0;
+        }
+
+
+        .final-heart::after {
+
+            top:
+                0;
+
+            left:
+                35px;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform:
+                    rotate(-45deg)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    rotate(-45deg)
+                    scale(1.08);
+            }
+        }
+
+
+
+        /* =========================
+           FINAL LETTER
+        ========================= */
+
+
+        .final-letter-section {
+
+            max-width:
+                800px;
+
+            margin:
+                0 auto;
+
+            padding:
+                30px 0 110px;
+
+            position:
+                relative;
+
+            z-index:
+                3;
+        }
+
+
+        .final-letter {
+
+            background:
+                #fff9f1;
+
+            border:
+                1px solid
+                rgba(104, 20, 35, 0.3);
+
+            padding:
+                65px clamp(30px, 7vw, 85px);
+
+            position:
+                relative;
+
+            box-shadow:
+                0 25px 60px
+                rgba(77, 22, 31, 0.10);
+        }
+
+
+        .final-letter::before {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                10px;
+
+            border:
+                1px solid
+                rgba(138, 28, 52, 0.12);
+
+            pointer-events:
+                none;
+        }
+
+
+        .letter-label {
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.3em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #8a1c34;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .final-letter h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(38px, 6vw, 62px);
+
+            line-height:
+                0.95;
+
+            font-weight:
+                500;
+
+            color:
+                #5b1724;
+
+            margin-bottom:
+                35px;
+        }
+
+
+        .final-letter p {
+
+            font-size:
+                12px;
+
+            line-height:
+                2;
+
+            color:
+                #755b60;
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .final-letter .dear {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                34px;
+
+            color:
+                #8a1c34;
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .final-sign {
+
+            margin-top:
+                40px;
+
+            text-align:
+                right;
+        }
+
+
+        .final-sign span {
+
+            display:
+                block;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                34px;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .final-sign small {
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.2em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #927579;
+        }
+
+
+
+        /* =========================
+           LAST WORD
+        ========================= */
+
+
+        .last-word {
+
+            min-height:
+                70vh;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            text-align:
+                center;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            padding:
+                80px 20px;
+        }
+
+
+        .last-word > span {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.3em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #927579;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .last-word h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(45px, 8vw, 90px);
+
+            line-height:
+                0.9;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                -0.05em;
+
+            color:
+                #681728;
+        }
+
+
+        .last-word h2 em {
+
+            display:
+                block;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            color:
+                #8a1c34;
+
+            font-size:
+                0.8em;
+
+            font-weight:
+                normal;
+
+            letter-spacing:
+                0;
+
+            margin-top:
+                15px;
+
+            transform:
+                rotate(-4deg);
+        }
+
+
+        .last-word p {
+
+            max-width:
+                470px;
+
+            margin-top:
+                35px;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.9;
+
+            color:
+                #755b60;
+        }
+
+
+
+        /* =========================
+           FINAL BUTTON
+        ========================= */
+
+
+        .stay-button {
+
+            margin-top:
+                45px;
+
+            padding:
+                16px 32px;
+
+            border:
+                1px solid
+                #8a1c34;
+
+            color:
+                #8a1c34;
+
+            background:
+                transparent;
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.25em;
+
+            text-transform:
+                uppercase;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .stay-button:hover {
+
+            background:
+                #8a1c34;
+
+            color:
+                #fff7ef;
+        }
+
+
+
+        /* =========================
+           ENDING
+        ========================= */
+
+
+        .true-ending {
+
+            min-height:
+                45vh;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            text-align:
+                center;
+
+            border-top:
+                1px solid
+                rgba(104, 20, 35, 0.18);
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            padding:
+                80px 20px 50px;
+        }
+
+
+        .true-ending h3 {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                clamp(45px, 7vw, 75px);
+
+            font-weight:
+                normal;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .true-ending p {
+
+            margin-top:
+                15px;
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.25em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #927579;
+        }
+
+
+        .ending-mark {
+
+            margin-top:
+                35px;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                13px;
+
+            color:
+                #8a1c34;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+
+        .final-footer {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            padding:
+                25px 3px 5px;
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.18em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #a0878a;
+
+            position:
+                relative;
+
+            z-index:
+                4;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+
+        @media(max-width: 600px) {
+
+            .final-page {
+
+                padding:
+                    20px 7vw 30px;
+            }
+
+
+            .final-page::before {
+
+                inset:
+                    11px;
+            }
+
+
+            .final-page::after {
+
+                inset:
+                    17px;
+            }
+
+
+            .final-hero {
+
+                min-height:
+                    82vh;
+
+                padding:
+                    60px 10px;
+            }
+
+
+            .final-hero h1 {
+
+                font-size:
+                    65px;
+            }
+
+
+            .final-intro {
+
+                font-size:
+                    11px;
+
+                line-height:
+                    1.9;
+            }
+
+
+            .final-letter {
+
+                padding:
+                    50px 30px;
+            }
+
+
+            .final-letter p {
+
+                font-size:
+                    11px;
+            }
+
+
+            .last-word {
+
+                min-height:
+                    60vh;
+            }
+
+
+            .true-ending {
+
+                min-height:
+                    38vh;
+            }
+
+
+            .final-footer {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    center;
+
+                text-align:
+                    center;
+
+                padding-bottom:
+                    0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="final-page">
+
+
+        <header class="final-top">
+
+            <span>
+                04 · 10 · 2026
+            </span>
+
+            <strong>
+                R
+            </strong>
+
+            <span>
+                final chapter
+            </span>
+
+        </header>
+
+
+
+        <section class="final-hero">
+
+            <div class="final-kicker">
+                and now, one last thing
+            </div>
+
+
+            <h1>
+                Happy
+                Birthday.
+                <span>
+                    my Rose
+                </span>
+            </h1>
+
+
+            <p class="final-intro">
+
+                If this little world had a thousand more pages,
+                I would still find a thousand more reasons to
+                write about you.
+
+            </p>
+
+
+            <div class="final-script">
+                my baby. my darling. my everything.
+            </div>
+
+
+            <div class="final-heart"></div>
+
+        </section>
+
+
+
+        <section class="final-letter-section">
+
+            <div class="final-letter">
+
+                <div class="letter-label">
+                    the last letter
+                </div>
+
+
+                <div class="dear">
+                    My Rose,
+                </div>
+
+
+                <h2>
+                    Some people
+                    are simply
+                    unforgettable.
+                </h2>
+
+
+                <p>
+                    And then there are people like you,
+                    who somehow become part of the little
+                    things without even trying.
+                </p>
+
+
+                <p>
+                    The person I want to tell things to.
+                    The person I can be completely ridiculous
+                    with. The person I can talk to without
+                    rehearsing every word first.
+                </p>
+
+
+                <p>
+                    I hope you know how deeply loved you are.
+                    Not because of what you do for people,
+                    not because of how much you give,
+                    but simply because you are you.
+                </p>
+
+
+                <p>
+                    So today, I hope you laugh too loudly,
+                    smile until your cheeks hurt,
+                    and let yourself feel just how special
+                    this day is.
+                </p>
+
+
+                <p>
+                    Happy birthday, Rose.
+                    I hope this year is gentle with you,
+                    kind to you, and full of little moments
+                    that make you think,
+                    “yeah, life is pretty beautiful.”
+                </p>
+
+
+                <div class="final-sign">
+
+                    <span>
+                        always,
+                    </span>
+
+                    <small>
+                        your person
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="last-word">
+
+            <span>
+                before you leave
+            </span>
+
+
+            <h2>
+                You are
+                <em>loved.</em>
+            </h2>
+
+
+            <p>
+                More than these pages could ever hold.
+                More than this little website could ever say.
+            </p>
+
+
+            <button
+                class="stay-button"
+                onclick="this.innerHTML='stay as long as you want ♡'"
+            >
+                stay here a while
+            </button>
+
+        </section>
+
+
+
+        <section class="true-ending">
+
+            <h3>
+                For Rose,
+            </h3>
+
+            <p>
+                on her birthday · and every ordinary day after it
+            </p>
+
+            <div class="ending-mark">
+                ♡
+            </div>
+
+        </section>
+
+
+
+        <footer class="final-footer">
+
+            <span>
+                made especially for rose
+            </span>
+
+            <span>
+                04 · 10 · 2026
+            </span>
+
+            <span>
+                end.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>

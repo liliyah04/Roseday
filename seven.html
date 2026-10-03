@@ -1,0 +1,3471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For Rose</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:wght@300;400;500;600;700&family=Italianno&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root{
+    --cream:#f6eee3;
+    --paper:#fffaf3;
+    --paper2:#fdf5eb;
+
+    --red:#a7192e;
+    --red2:#c62d45;
+    --red3:#8c1225;
+
+    --deep:#64101d;
+    --wine:#481019;
+    --ink:#2c171a;
+
+    --muted:#77595b;
+
+    --line:rgba(111,20,34,.22);
+    --soft-red:rgba(167,25,46,.08);
+
+    --shadow:rgba(73,14,22,.16);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(198,45,69,.07),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(167,25,46,.06),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(112,20,33,.06),
+            transparent 32%
+        ),
+        var(--cream);
+
+    color:var(--ink);
+    font-family:"DM Sans",sans-serif;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   PAPER TEXTURE
+========================================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.22;
+
+    background-image:
+        radial-gradient(
+            rgba(60,20,20,.18) .5px,
+            transparent .5px
+        );
+
+    background-size:7px 7px;
+
+    mix-blend-mode:multiply;
+
+    z-index:100;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+.page{
+    width:100%;
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar{
+    width:min(1380px, calc(100% - 70px));
+
+    margin:0 auto;
+
+    padding:30px 0 18px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid var(--line);
+
+    position:relative;
+    z-index:10;
+}
+
+.top-left,
+.top-right{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+}
+
+.chapter-number{
+    width:34px;
+    height:34px;
+
+    border:1px solid var(--red);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:11px;
+
+    letter-spacing:.08em;
+
+    color:var(--red);
+}
+
+.top-label{
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.23em;
+
+    font-weight:600;
+
+    color:var(--deep);
+}
+
+.top-right{
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.2em;
+
+    color:var(--muted);
+}
+
+
+/* =========================================
+   BACKGROUND WORDS
+========================================= */
+
+.background-word{
+    position:absolute;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(120px,22vw,350px);
+
+    line-height:.7;
+
+    color:rgba(167,25,46,.035);
+
+    pointer-events:none;
+
+    white-space:nowrap;
+
+    user-select:none;
+}
+
+.background-word.one{
+    top:150px;
+    left:-90px;
+}
+
+.background-word.two{
+    bottom:150px;
+    right:-140px;
+
+    transform:rotate(-8deg);
+}
+
+
+/* =========================================
+   DECORATIVE CORNERS
+========================================= */
+
+.corner{
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    pointer-events:none;
+
+    opacity:.7;
+}
+
+.corner::before,
+.corner::after{
+    content:"";
+
+    position:absolute;
+}
+
+.corner.tl{
+    top:0;
+    left:0;
+}
+
+.corner.tr{
+    top:0;
+    right:0;
+
+    transform:scaleX(-1);
+}
+
+.corner.bl{
+    bottom:0;
+    left:0;
+
+    transform:scaleY(-1);
+}
+
+.corner.br{
+    bottom:0;
+    right:0;
+
+    transform:scale(-1);
+}
+
+.corner::before{
+    width:100px;
+    height:100px;
+
+    border-top:1px solid rgba(167,25,46,.28);
+    border-left:1px solid rgba(167,25,46,.28);
+
+    top:18px;
+    left:18px;
+}
+
+.corner::after{
+    width:42px;
+    height:42px;
+
+    border-top:1px solid rgba(167,25,46,.35);
+    border-left:1px solid rgba(167,25,46,.35);
+
+    top:39px;
+    left:39px;
+
+    transform:rotate(45deg);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    width:min(1240px, calc(100% - 70px));
+
+    margin:0 auto;
+
+    padding:105px 0 70px;
+
+    position:relative;
+
+    text-align:center;
+}
+
+.hero-kicker{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.3em;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:var(--red);
+
+    margin-bottom:28px;
+}
+
+.hero-kicker::before,
+.hero-kicker::after{
+    content:"";
+
+    width:38px;
+    height:1px;
+
+    background:var(--red);
+}
+
+.hero h1{
+    font-family:"Bodoni Moda",serif;
+
+    font-weight:500;
+
+    font-size:clamp(70px,11vw,150px);
+
+    line-height:.82;
+
+    letter-spacing:-.065em;
+
+    color:var(--wine);
+}
+
+.hero h1 span{
+    display:block;
+
+    color:var(--red);
+
+    font-style:italic;
+
+    font-weight:400;
+
+    margin-left:90px;
+}
+
+.hero-sub{
+    max-width:650px;
+
+    margin:42px auto 0;
+
+    font-family:"Playfair Display",serif;
+
+    font-style:italic;
+
+    font-size:clamp(18px,2vw,25px);
+
+    line-height:1.6;
+
+    color:#654648;
+}
+
+.hero-date{
+    margin-top:30px;
+
+    font-size:10px;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+}
+
+
+/* =========================================
+   FLOATING PETALS
+========================================= */
+
+.petal{
+    position:absolute;
+
+    width:13px;
+    height:24px;
+
+    background:var(--red);
+
+    border-radius:100% 0 100% 0;
+
+    opacity:.45;
+
+    transform:rotate(35deg);
+
+    animation:floatPetal 7s ease-in-out infinite;
+}
+
+.petal.p1{
+    top:240px;
+    left:9%;
+
+    animation-delay:-2s;
+}
+
+.petal.p2{
+    top:380px;
+    right:13%;
+
+    width:9px;
+    height:18px;
+
+    transform:rotate(70deg);
+
+    animation-delay:-4s;
+}
+
+.petal.p3{
+    top:520px;
+    left:17%;
+
+    width:8px;
+    height:16px;
+
+    transform:rotate(-20deg);
+
+    animation-delay:-1s;
+}
+
+.petal.p4{
+    top:620px;
+    right:7%;
+
+    width:12px;
+    height:22px;
+
+    transform:rotate(120deg);
+
+    animation-delay:-5s;
+}
+
+@keyframes floatPetal{
+
+    0%,100%{
+        translate:0 0;
+    }
+
+    50%{
+        translate:12px -24px;
+    }
+
+}
+
+
+/* =========================================
+   LETTER SECTION
+========================================= */
+
+.letter-section{
+    width:min(1120px, calc(100% - 45px));
+
+    margin:0 auto;
+
+    position:relative;
+
+    padding:40px 0 120px;
+}
+
+.letter-stage{
+    position:relative;
+
+    min-height:900px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+}
+
+
+/* =========================================
+   RIBBON
+========================================= */
+
+.ribbon{
+    position:absolute;
+
+    width:125px;
+    height:44px;
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--red3),
+            var(--red2) 42%,
+            var(--red)
+        );
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:8;
+
+    box-shadow:
+        0 10px 25px rgba(87,12,24,.22),
+        inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.ribbon::before,
+.ribbon::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:38px;
+    height:58px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--red3),
+            var(--red)
+        );
+
+    z-index:-1;
+}
+
+.ribbon::before{
+    left:-27px;
+
+    clip-path:
+        polygon(
+            100% 0,
+            100% 100%,
+            0 76%,
+            27% 50%,
+            0 25%
+        );
+}
+
+.ribbon::after{
+    right:-27px;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 25%,
+            73% 50%,
+            100% 76%,
+            0 100%
+        );
+}
+
+.ribbon span{
+    display:block;
+
+    text-align:center;
+
+    color:#fff8ef;
+
+    font-size:9px;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    line-height:44px;
+
+    padding-left:4px;
+}
+
+
+/* =========================================
+   RIBBON TAILS
+========================================= */
+
+.ribbon-tail{
+    position:absolute;
+
+    top:31px;
+
+    width:74px;
+    height:145px;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--red3),
+            var(--red2)
+        );
+
+    z-index:3;
+
+    opacity:.95;
+}
+
+.ribbon-tail.left{
+    left:calc(50% - 88px);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            52% 84%,
+            0 100%
+        );
+
+    transform:rotate(5deg);
+}
+
+.ribbon-tail.right{
+    right:calc(50% - 88px);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            48% 84%,
+            0 100%
+        );
+
+    transform:rotate(-5deg);
+}
+
+
+/* =========================================
+   LETTER PAPER
+========================================= */
+
+.letter{
+    width:min(840px, 100%);
+
+    margin-top:45px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(124,25,38,.025),
+            transparent 8%,
+            transparent 92%,
+            rgba(124,25,38,.025)
+        ),
+        var(--paper);
+
+    border:1px solid rgba(111,20,34,.25);
+
+    box-shadow:
+        0 30px 70px rgba(70,17,24,.13),
+        0 5px 15px rgba(70,17,24,.08);
+
+    position:relative;
+
+    padding:88px 88px 82px;
+
+    transform:rotate(-.35deg);
+
+    transition:
+        transform .6s ease,
+        box-shadow .6s ease;
+}
+
+.letter:hover{
+    transform:rotate(0deg) translateY(-5px);
+
+    box-shadow:
+        0 40px 90px rgba(70,17,24,.18),
+        0 8px 20px rgba(70,17,24,.09);
+}
+
+.letter::before{
+    content:"";
+
+    position:absolute;
+
+    inset:13px;
+
+    border:1px solid rgba(167,25,46,.16);
+
+    pointer-events:none;
+}
+
+.letter::after{
+    content:"";
+
+    position:absolute;
+
+    inset:25px;
+
+    border:1px solid rgba(167,25,46,.06);
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   LETTER CORNERS
+========================================= */
+
+.letter-corner{
+    position:absolute;
+
+    width:42px;
+    height:42px;
+
+    opacity:.5;
+}
+
+.letter-corner::before,
+.letter-corner::after{
+    content:"";
+
+    position:absolute;
+}
+
+.letter-corner::before{
+    width:28px;
+    height:28px;
+
+    border-top:1px solid var(--red);
+    border-left:1px solid var(--red);
+}
+
+.letter-corner::after{
+    width:9px;
+    height:9px;
+
+    background:var(--red);
+
+    border-radius:50%;
+
+    opacity:.5;
+}
+
+.letter-corner.lt{
+    top:36px;
+    left:36px;
+}
+
+.letter-corner.rt{
+    top:36px;
+    right:36px;
+
+    transform:scaleX(-1);
+}
+
+.letter-corner.lb{
+    bottom:36px;
+    left:36px;
+
+    transform:scaleY(-1);
+}
+
+.letter-corner.rb{
+    bottom:36px;
+    right:36px;
+
+    transform:scale(-1);
+}
+
+.letter-corner::after{
+    top:19px;
+    left:19px;
+}
+
+
+/* =========================================
+   LETTER HEADER
+========================================= */
+
+.letter-header{
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.letter-small{
+    text-transform:uppercase;
+
+    font-size:9px;
+
+    letter-spacing:.35em;
+
+    color:var(--red);
+
+    font-weight:600;
+}
+
+.letter-title{
+    margin-top:17px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(45px,6vw,76px);
+
+    line-height:.95;
+
+    font-weight:500;
+
+    letter-spacing:-.045em;
+
+    color:var(--wine);
+}
+
+.letter-title em{
+    color:var(--red);
+
+    font-family:"Italianno",cursive;
+
+    font-size:1.35em;
+
+    font-weight:400;
+}
+
+.letter-line{
+    width:110px;
+    height:1px;
+
+    background:var(--red);
+
+    margin:28px auto;
+
+    position:relative;
+}
+
+.letter-line::before,
+.letter-line::after{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    width:5px;
+    height:5px;
+
+    background:var(--red);
+
+    border-radius:50%;
+
+    transform:translateY(-50%);
+}
+
+.letter-line::before{
+    left:-8px;
+}
+
+.letter-line::after{
+    right:-8px;
+}
+
+.letter-opening{
+    font-family:"Playfair Display",serif;
+
+    font-style:italic;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#74575a;
+}
+
+
+/* =========================================
+   LETTER BODY
+========================================= */
+
+.letter-body{
+    margin-top:52px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.letter-body p{
+    font-family:"Playfair Display",serif;
+
+    font-size:17px;
+
+    line-height:1.95;
+
+    color:#3d2528;
+
+    margin-bottom:27px;
+}
+
+.letter-body p:first-child::first-letter{
+    float:left;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:72px;
+
+    line-height:.7;
+
+    padding:10px 12px 0 0;
+
+    color:var(--red);
+}
+
+.letter-body .highlight{
+    color:var(--red);
+
+    font-style:italic;
+}
+
+.letter-body .strong{
+    font-weight:500;
+
+    color:var(--wine);
+}
+
+
+/* =========================================
+   PULL QUOTE
+========================================= */
+
+.pullquote{
+    margin:52px -25px;
+
+    padding:42px 35px;
+
+    border-top:1px solid rgba(167,25,46,.3);
+    border-bottom:1px solid rgba(167,25,46,.3);
+
+    text-align:center;
+
+    position:relative;
+}
+
+.pullquote::before{
+    content:"“";
+
+    position:absolute;
+
+    left:50%;
+    top:3px;
+
+    transform:translateX(-50%);
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:80px;
+
+    line-height:1;
+
+    color:rgba(167,25,46,.08);
+}
+
+.pullquote p{
+    position:relative;
+
+    margin:0;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(25px,3.5vw,39px);
+
+    line-height:1.25;
+
+    font-style:italic;
+
+    color:var(--red);
+}
+
+
+/* =========================================
+   MINI NOTE
+========================================= */
+
+.mini-note{
+    width:85%;
+
+    margin:50px auto 0;
+
+    padding:26px 28px;
+
+    background:#f8eee2;
+
+    border:1px solid rgba(167,25,46,.15);
+
+    position:relative;
+
+    transform:rotate(.6deg);
+}
+
+.mini-note::before{
+    content:"a little note";
+
+    position:absolute;
+
+    top:-9px;
+    left:24px;
+
+    padding:2px 10px;
+
+    background:var(--paper);
+
+    color:var(--red);
+
+    text-transform:uppercase;
+
+    letter-spacing:.22em;
+
+    font-size:8px;
+}
+
+.mini-note p{
+    margin:0;
+
+    text-align:center;
+
+    font-family:"Italianno",cursive;
+
+    font-size:31px;
+
+    line-height:1.3;
+
+    color:var(--deep);
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.signature{
+    margin-top:55px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    position:relative;
+}
+
+.signature-inner{
+    text-align:right;
+}
+
+.signature-small{
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.28em;
+
+    color:var(--muted);
+}
+
+.signature-name{
+    font-family:"Italianno",cursive;
+
+    color:var(--red);
+
+    font-size:52px;
+
+    line-height:1;
+
+    margin-top:4px;
+}
+
+.signature-heart{
+    color:var(--red);
+
+    font-size:15px;
+
+    margin-top:5px;
+}
+
+
+/* =========================================
+   SEAL
+========================================= */
+
+.seal{
+    position:absolute;
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #dc5367 0%,
+            var(--red2) 25%,
+            var(--red3) 68%,
+            #5e0c19 100%
+        );
+
+    bottom:-46px;
+    left:62px;
+
+    z-index:10;
+
+    box-shadow:
+        0 15px 30px rgba(83,11,22,.23),
+        inset 0 2px 5px rgba(255,255,255,.2),
+        inset 0 -5px 8px rgba(50,0,10,.22);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transform:rotate(-9deg);
+
+    transition:
+        transform .5s ease,
+        scale .5s ease;
+}
+
+.seal:hover{
+    transform:rotate(0deg);
+
+    scale:1.08;
+}
+
+.seal::before{
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:1px solid rgba(255,240,230,.35);
+
+    border-radius:50%;
+}
+
+.seal::after{
+    content:"R";
+
+    font-family:"Bodoni Moda",serif;
+
+    color:#fff4ea;
+
+    font-size:36px;
+
+    font-weight:500;
+}
+
+.seal-text{
+    position:absolute;
+
+    bottom:12px;
+
+    font-size:6px;
+
+    color:rgba(255,245,235,.72);
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+}
+
+
+/* =========================================
+   SIDE STAMPS
+========================================= */
+
+.side-stamp{
+    position:absolute;
+
+    width:125px;
+    height:125px;
+
+    border:1px solid rgba(167,25,46,.3);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--red);
+
+    text-transform:uppercase;
+
+    font-size:8px;
+
+    line-height:1.8;
+
+    letter-spacing:.2em;
+
+    opacity:.7;
+}
+
+.side-stamp::before{
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    border:1px dashed rgba(167,25,46,.32);
+
+    border-radius:50%;
+}
+
+.side-stamp.left{
+    left:0;
+    top:190px;
+
+    transform:rotate(-13deg);
+}
+
+.side-stamp.right{
+    right:0;
+    top:570px;
+
+    transform:rotate(11deg);
+}
+
+.side-stamp span{
+    position:relative;
+
+    z-index:2;
+}
+
+.side-stamp strong{
+    display:block;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:23px;
+
+    font-weight:500;
+
+    letter-spacing:0;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media(max-width:900px){
+
+    .topbar{
+        width:calc(100% - 38px);
+    }
+
+    .hero{
+        width:calc(100% - 38px);
+
+        padding-top:80px;
+    }
+
+    .hero h1 span{
+        margin-left:30px;
+    }
+
+    .letter-section{
+        width:calc(100% - 28px);
+    }
+
+    .letter{
+        padding:75px 55px 70px;
+    }
+
+    .side-stamp{
+        display:none;
+    }
+
+}
+  /* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media(max-width:620px){
+
+    body::before{
+        opacity:.14;
+    }
+
+    .topbar{
+        padding-top:21px;
+        width:calc(100% - 28px);
+    }
+
+    .top-right{
+        letter-spacing:.12em;
+        font-size:8px;
+    }
+
+    .chapter-number{
+        width:29px;
+        height:29px;
+        font-size:9px;
+    }
+
+    .top-label{
+        font-size:8px;
+        letter-spacing:.16em;
+    }
+
+    .hero{
+        width:calc(100% - 28px);
+        padding:70px 0 50px;
+    }
+
+    .hero-kicker{
+        font-size:8px;
+        letter-spacing:.22em;
+        gap:8px;
+    }
+
+    .hero-kicker::before,
+    .hero-kicker::after{
+        width:22px;
+    }
+
+    .hero h1{
+        font-size:clamp(58px,17vw,95px);
+        line-height:.86;
+    }
+
+    .hero h1 span{
+        margin-left:12px;
+    }
+
+    .hero-sub{
+        margin-top:30px;
+        font-size:16px;
+    }
+
+    .hero-date{
+        font-size:8px;
+        letter-spacing:.24em;
+    }
+
+    .letter-section{
+        width:calc(100% - 16px);
+        padding-bottom:75px;
+    }
+
+    .letter-stage{
+        min-height:0;
+    }
+
+    .ribbon{
+        width:105px;
+        height:39px;
+    }
+
+    .ribbon span{
+        line-height:39px;
+        font-size:7px;
+    }
+
+    .ribbon-tail{
+        top:27px;
+        width:55px;
+        height:105px;
+    }
+
+    .ribbon-tail.left{
+        left:calc(50% - 75px);
+    }
+
+    .ribbon-tail.right{
+        right:calc(50% - 75px);
+    }
+
+    .letter{
+        margin-top:38px;
+        padding:66px 27px 65px;
+        transform:rotate(0deg);
+    }
+
+    .letter::before{
+        inset:9px;
+    }
+
+    .letter::after{
+        inset:17px;
+    }
+
+    .letter-corner{
+        display:none;
+    }
+
+    .letter-title{
+        font-size:clamp(42px,14vw,65px);
+    }
+
+    .letter-opening{
+        font-size:15px;
+    }
+
+    .letter-body{
+        margin-top:40px;
+    }
+
+    .letter-body p{
+        font-size:15px;
+        line-height:1.85;
+        margin-bottom:23px;
+    }
+
+    .letter-body p:first-child::first-letter{
+        font-size:58px;
+    }
+
+    .pullquote{
+        margin:40px -5px;
+        padding:35px 15px;
+    }
+
+    .pullquote p{
+        font-size:27px;
+    }
+
+    .mini-note{
+        width:94%;
+    }
+
+    .mini-note p{
+        font-size:26px;
+    }
+
+    .signature{
+        margin-top:43px;
+    }
+
+    .seal{
+        width:76px;
+        height:76px;
+        left:26px;
+        bottom:-38px;
+    }
+
+    .seal::after{
+        font-size:29px;
+    }
+
+    .seal-text{
+        font-size:5px;
+        bottom:9px;
+    }
+
+    .background-word{
+        font-size:130px;
+    }
+
+    .corner{
+        display:none;
+    }
+
+}
+
+
+/* =========================================
+   MEMORY INTRO
+========================================= */
+
+.memory-intro{
+    text-align:center;
+
+    margin:110px auto 55px;
+
+    max-width:650px;
+}
+
+.memory-intro .eyebrow{
+    color:var(--red);
+
+    text-transform:uppercase;
+
+    letter-spacing:.28em;
+
+    font-size:9px;
+
+    font-weight:600;
+}
+
+.memory-intro h2{
+    margin-top:16px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(43px,6vw,72px);
+
+    line-height:.95;
+
+    font-weight:500;
+
+    letter-spacing:-.05em;
+
+    color:var(--wine);
+}
+
+.memory-intro h2 em{
+    color:var(--red);
+
+    font-family:"Italianno",cursive;
+
+    font-size:1.2em;
+
+    font-weight:400;
+}
+
+.memory-intro p{
+    margin-top:24px;
+
+    color:var(--muted);
+
+    font-family:"Playfair Display",serif;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+    font-size:16px;
+}
+
+
+/* =========================================
+   MEMORY GRID
+========================================= */
+
+.memory-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:24px;
+
+    position:relative;
+}
+
+.memory-card{
+    min-height:330px;
+
+    background:var(--paper);
+
+    border:1px solid rgba(111,20,34,.18);
+
+    position:relative;
+
+    padding:34px 30px;
+
+    box-shadow:
+        0 18px 40px rgba(72,15,23,.08);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+    overflow:hidden;
+}
+
+.memory-card:nth-child(1){
+    transform:rotate(-1.5deg);
+}
+
+.memory-card:nth-child(2){
+    transform:
+        translateY(22px)
+        rotate(.7deg);
+}
+
+.memory-card:nth-child(3){
+    transform:rotate(1.6deg);
+}
+
+.memory-card:hover{
+    transform:
+        translateY(-12px)
+        rotate(0deg);
+
+    box-shadow:
+        0 28px 55px rgba(72,15,23,.14);
+}
+
+.memory-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    background:
+        rgba(167,25,46,.055);
+
+    top:-55px;
+    right:-45px;
+}
+
+.memory-number{
+    font-family:"Bodoni Moda",serif;
+
+    color:var(--red);
+
+    font-size:16px;
+
+    font-style:italic;
+}
+
+.memory-card h3{
+    margin-top:42px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:30px;
+
+    line-height:1.05;
+
+    font-weight:500;
+
+    color:var(--wine);
+}
+
+.memory-card p{
+    margin-top:20px;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+.memory-card .card-line{
+    position:absolute;
+
+    bottom:31px;
+    left:30px;
+
+    width:46px;
+    height:1px;
+
+    background:var(--red);
+}
+
+.memory-card .card-word{
+    position:absolute;
+
+    bottom:27px;
+    right:30px;
+
+    font-family:"Italianno",cursive;
+
+    color:var(--red);
+
+    font-size:25px;
+}
+
+
+/* =========================================
+   MEMORY CARD DECORATION
+========================================= */
+
+.memory-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:38px;
+    height:38px;
+
+    right:22px;
+    top:22px;
+
+    border-right:1px solid rgba(167,25,46,.2);
+    border-top:1px solid rgba(167,25,46,.2);
+
+    opacity:.6;
+}
+
+.memory-card:nth-child(2)::after{
+    transform:rotate(8deg);
+}
+
+.memory-card:nth-child(3)::after{
+    transform:rotate(-8deg);
+}
+
+
+/* =========================================
+   CENTER QUOTE
+========================================= */
+
+.center-quote{
+    padding:130px 20px 100px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.center-quote::before{
+    content:"";
+
+    position:absolute;
+
+    width:1px;
+    height:75px;
+
+    background:var(--red);
+
+    left:50%;
+    top:20px;
+}
+
+.center-quote .tiny{
+    text-transform:uppercase;
+
+    font-size:9px;
+
+    letter-spacing:.3em;
+
+    color:var(--red);
+}
+
+.center-quote h2{
+    max-width:900px;
+
+    margin:24px auto 0;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(35px,5.5vw,65px);
+
+    line-height:1.12;
+
+    letter-spacing:-.04em;
+
+    font-weight:400;
+
+    color:var(--wine);
+}
+
+.center-quote h2 span{
+    color:var(--red);
+
+    font-style:italic;
+}
+
+.center-quote .tiny-bottom{
+    margin-top:27px;
+
+    font-family:"Italianno",cursive;
+
+    font-size:32px;
+
+    color:var(--red);
+}
+
+
+/* =========================================
+   LITTLE THINGS SECTION
+========================================= */
+
+.little-section{
+    position:relative;
+
+    width:100%;
+
+    padding:40px 0 120px;
+}
+
+.little-heading{
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.little-heading .eyebrow{
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.32em;
+
+    color:var(--red);
+
+    font-weight:600;
+}
+
+.little-heading h2{
+    margin-top:14px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-weight:500;
+
+    font-size:clamp(45px,6vw,75px);
+
+    letter-spacing:-.055em;
+
+    line-height:.95;
+
+    color:var(--wine);
+}
+
+.little-heading h2 em{
+    color:var(--red);
+
+    font-family:"Italianno",cursive;
+
+    font-size:1.25em;
+
+    font-weight:400;
+}
+
+
+/* =========================================
+   LITTLE THINGS LIST
+========================================= */
+
+.little-list{
+    width:min(900px, calc(100% - 30px));
+
+    margin:0 auto;
+
+    border-top:1px solid var(--line);
+}
+
+.little-item{
+    min-height:110px;
+
+    border-bottom:1px solid var(--line);
+
+    display:grid;
+
+    grid-template-columns:80px 1fr 90px;
+
+    align-items:center;
+
+    gap:25px;
+
+    position:relative;
+
+    transition:
+        padding .4s ease,
+        background .4s ease;
+}
+
+.little-item:hover{
+    padding-left:20px;
+    padding-right:20px;
+
+    background:
+        rgba(167,25,46,.035);
+}
+
+.little-item-number{
+    font-family:"Bodoni Moda",serif;
+
+    font-size:13px;
+
+    color:var(--red);
+
+    font-style:italic;
+}
+
+.little-item-text{
+    font-family:"Playfair Display",serif;
+
+    font-size:20px;
+
+    color:var(--wine);
+
+    line-height:1.45;
+}
+
+.little-item-text em{
+    color:var(--red);
+}
+
+.little-item-word{
+    text-align:right;
+
+    font-family:"Italianno",cursive;
+
+    font-size:28px;
+
+    color:var(--red);
+
+    opacity:.8;
+}
+
+
+/* =========================================
+   HEART ORNAMENT
+========================================= */
+
+.heart-ornament{
+    width:75px;
+    height:75px;
+
+    margin:85px auto 30px;
+
+    position:relative;
+
+    transform:rotate(-45deg);
+}
+
+.heart-ornament::before,
+.heart-ornament::after{
+    content:"";
+
+    position:absolute;
+
+    width:75px;
+    height:75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red2),
+            var(--red3)
+        );
+
+    border-radius:50%;
+}
+
+.heart-ornament::before{
+    top:-37px;
+    left:0;
+}
+
+.heart-ornament::after{
+    top:0;
+    left:37px;
+}
+
+.heart-ornament{
+    background:
+        linear-gradient(
+            135deg,
+            var(--red2),
+            var(--red3)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(93,10,25,.2);
+}
+
+.heart-label{
+    text-align:center;
+
+    font-family:"Italianno",cursive;
+
+    color:var(--red);
+
+    font-size:29px;
+}
+
+
+/* =========================================
+   CLOSING PANEL
+========================================= */
+
+.closing-panel{
+    width:min(1040px, calc(100% - 30px));
+
+    margin:100px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red3),
+            var(--red) 45%,
+            #bd263f
+        );
+
+    color:#fff8f0;
+
+    position:relative;
+
+    padding:80px 75px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 30px 70px rgba(73,13,23,.22);
+}
+
+.closing-panel::before{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    right:-180px;
+    top:-200px;
+}
+
+.closing-panel::after{
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    left:-150px;
+    bottom:-150px;
+}
+
+.closing-content{
+    position:relative;
+
+    z-index:2;
+
+    max-width:730px;
+}
+
+.closing-small{
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    opacity:.7;
+}
+
+.closing-panel h2{
+    margin-top:22px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-weight:500;
+
+    font-size:clamp(45px,6vw,78px);
+
+    line-height:.95;
+
+    letter-spacing:-.055em;
+}
+
+.closing-panel h2 em{
+    font-family:"Italianno",cursive;
+
+    font-size:1.25em;
+
+    font-weight:400;
+}
+
+.closing-panel p{
+    margin-top:30px;
+
+    max-width:670px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:rgba(255,248,240,.86);
+}
+
+.closing-sign{
+    margin-top:35px;
+
+    font-family:"Italianno",cursive;
+
+    font-size:38px;
+
+    color:#fff5eb;
+}
+
+
+/* =========================================
+   DECORATIVE FLOWER
+========================================= */
+
+.flower{
+    position:absolute;
+
+    right:70px;
+    bottom:50px;
+
+    width:125px;
+    height:125px;
+
+    opacity:.45;
+}
+
+.flower-petal{
+    position:absolute;
+
+    width:38px;
+    height:65px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e26a7b,
+            #8c1225
+        );
+
+    border-radius:100% 0 100% 0;
+
+    left:43px;
+    top:30px;
+
+    transform-origin:20px 35px;
+}
+
+.flower-petal:nth-child(1){
+    transform:rotate(0deg);
+}
+
+.flower-petal:nth-child(2){
+    transform:rotate(60deg);
+}
+
+.flower-petal:nth-child(3){
+    transform:rotate(120deg);
+}
+
+.flower-petal:nth-child(4){
+    transform:rotate(180deg);
+}
+
+.flower-petal:nth-child(5){
+    transform:rotate(240deg);
+}
+
+.flower-petal:nth-child(6){
+    transform:rotate(300deg);
+}
+
+.flower-center{
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    border-radius:50%;
+
+    background:#f2b3a7;
+
+    left:50px;
+    top:50px;
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,.08);
+}
+
+
+/* =========================================
+   FINAL NAVIGATION
+========================================= */
+
+.final-navigation{
+    padding:100px 0 40px;
+
+    text-align:center;
+}
+
+.final-navigation .tiny{
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.3em;
+
+    color:var(--muted);
+}
+
+.final-navigation h3{
+    margin-top:16px;
+
+    font-family:"Bodoni Moda",serif;
+
+    font-size:clamp(35px,5vw,55px);
+
+    font-weight:500;
+
+    color:var(--wine);
+
+    letter-spacing:-.04em;
+}
+
+.final-navigation h3 span{
+    color:var(--red);
+
+    font-style:italic;
+}
+
+
+/* =========================================
+   PAGE BUTTON
+========================================= */
+
+.next-page{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    margin-top:30px;
+
+    min-width:215px;
+
+    padding:17px 28px;
+
+    border:1px solid var(--red);
+
+    background:var(--red);
+
+    color:#fff8f1;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        color .35s ease,
+        background .35s ease,
+        transform .35s ease;
+}
+
+.next-page::before{
+    content:"";
+
+    position:absolute;
+
+    width:0;
+    height:100%;
+
+    left:0;
+    top:0;
+
+    background:#fff8f1;
+
+    transition:width .4s ease;
+
+    z-index:0;
+}
+
+.next-page span{
+    position:relative;
+
+    z-index:2;
+}
+
+.next-page:hover{
+    color:var(--red);
+
+    transform:translateY(-4px);
+}
+
+.next-page:hover::before{
+    width:100%;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.page-footer{
+    width:min(1120px, calc(100% - 35px));
+
+    margin:70px auto 0;
+
+    padding:28px 0 35px;
+
+    border-top:1px solid var(--line);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.2em;
+}
+
+.footer-center{
+    font-family:"Italianno",cursive;
+
+    font-size:25px;
+
+    text-transform:none;
+
+    letter-spacing:0;
+
+    color:var(--red);
+}
+
+
+/* =========================================
+   EXTRA MOBILE STYLES
+========================================= */
+
+@media(max-width:620px){
+
+    .memory-intro{
+        margin-top:85px;
+    }
+
+    .memory-intro h2{
+        font-size:50px;
+    }
+
+    .memory-intro p{
+        font-size:14px;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .memory-card{
+        min-height:300px;
+
+        padding:29px 25px;
+    }
+
+    .memory-card:nth-child(1),
+    .memory-card:nth-child(2),
+    .memory-card:nth-child(3){
+        transform:rotate(0deg);
+    }
+
+    .memory-card:hover{
+        transform:translateY(-8px);
+    }
+
+    .memory-card h3{
+        margin-top:35px;
+
+        font-size:28px;
+    }
+
+    .memory-card p{
+        font-size:12px;
+    }
+
+    .center-quote{
+        padding:110px 15px 80px;
+    }
+
+    .center-quote h2{
+        font-size:37px;
+    }
+
+    .little-section{
+        padding-bottom:80px;
+    }
+
+    .little-heading h2{
+        font-size:50px;
+    }
+
+    .little-list{
+        width:calc(100% - 20px);
+    }
+
+    .little-item{
+        min-height:100px;
+
+        grid-template-columns:38px 1fr;
+
+        gap:13px;
+
+        padding:18px 5px;
+    }
+
+    .little-item:hover{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .little-item-text{
+        font-size:16px;
+    }
+
+    .little-item-word{
+        display:none;
+    }
+
+    .heart-ornament{
+        margin-top:65px;
+    }
+
+    .closing-panel{
+        width:calc(100% - 20px);
+
+        padding:55px 28px;
+
+        margin-top:70px;
+    }
+
+    .closing-panel h2{
+        font-size:48px;
+    }
+
+    .closing-panel p{
+        font-size:14px;
+
+        line-height:1.8;
+    }
+
+    .flower{
+        right:-20px;
+        bottom:15px;
+
+        transform:scale(.7);
+    }
+
+    .final-navigation{
+        padding:75px 10px 30px;
+    }
+
+    .final-navigation h3{
+        font-size:40px;
+    }
+
+    .next-page{
+        min-width:190px;
+
+        padding:16px 22px;
+
+        font-size:8px;
+    }
+
+    .page-footer{
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONE FIX
+========================================= */
+
+@media(max-width:390px){
+
+    .letter-title{
+        font-size:40px;
+    }
+
+    .letter-body p{
+        font-size:14px;
+    }
+
+    .pullquote p{
+        font-size:24px;
+    }
+
+    .little-item-text{
+        font-size:15px;
+    }
+
+    .closing-panel h2{
+        font-size:43px;
+    }
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes gentleAppear{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.hero{
+    animation:
+        gentleAppear 1s ease both;
+}
+
+.letter{
+    animation:
+        gentleAppear 1.2s .15s ease both;
+}
+
+
+/* =========================================
+   END OF STYLE
+========================================= */
+
+</style>
+
+
+<!-- =========================================
+     BODY STARTS IN PART 3
+========================================= -->
+
+<body>
+
+<div class="page">
+
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="background-word one">
+        ROSE
+    </div>
+
+    <div class="background-word two">
+        LOVE
+    </div>
+
+    <div class="petal p1"></div>
+    <div class="petal p2"></div>
+    <div class="petal p3"></div>
+    <div class="petal p4"></div>
+
+
+    <!-- =====================================
+         TOP BAR
+    ====================================== -->
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <div class="chapter-number">
+                07
+            </div>
+
+            <div class="top-label">
+                chapter seven · a letter for rose
+            </div>
+
+        </div>
+
+        <div class="top-right">
+            07 / 11
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="hero">
+
+        <div class="hero-kicker">
+            something i wanted you to know
+        </div>
+
+        <h1>
+            Dear
+            <span>Rose.</span>
+        </h1>
+
+        <p class="hero-sub">
+            If everything I feel about you had to fit somewhere,
+            I think I would start here.
+        </p>
+
+        <div class="hero-date">
+            written with far too much love · 04.10.2026
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         LETTER SECTION
+    ====================================== -->
+
+    <section class="letter-section">
+
+        <div class="letter-stage">
+
+            <div class="ribbon">
+                <span>for you</span>
+            </div>
+
+            <div class="ribbon-tail left"></div>
+            <div class="ribbon-tail right"></div>
+
+
+            <div class="side-stamp left">
+
+                <span>
+
+                    <strong>R</strong>
+
+                    one of one
+
+                    <br>
+
+                    always
+
+                </span>
+
+            </div>
+
+
+            <div class="side-stamp right">
+
+                <span>
+
+                    <strong>♡</strong>
+
+                    carefully
+
+                    <br>
+
+                written
+
+                </span>
+
+            </div>
+
+
+            <article class="letter">
+
+                <div class="letter-corner lt"></div>
+                <div class="letter-corner rt"></div>
+                <div class="letter-corner lb"></div>
+                <div class="letter-corner rb"></div>
+
+
+                <div class="letter-header">
+
+                    <div class="letter-small">
+                        open this slowly
+                    </div>
+
+                    <h2 class="letter-title">
+                        To my
+                        <em>Rose</em>
+                    </h2>
+
+                    <div class="letter-line"></div>
+
+                    <p class="letter-opening">
+                        There are some people you meet,
+                        and then there are people who quietly become
+                        a part of you.
+                    </p>
+
+                </div>
+
+
+                <div class="letter-body">
+
+                    <p>
+                        I don't really know how to begin this without
+                        sounding ridiculously sentimental, so I suppose
+                        I'll just be honest and let myself be a little
+                        ridiculous.
+                        <span class="highlight">
+                            You matter to me. A lot.
+                        </span>
+                    </p>
+
+                    <p>
+                        And I don't mean that in the simple way of saying
+                        “you're my friend” and leaving it there.
+                        You became something much more familiar than that.
+                        Somewhere along the way, talking to you stopped
+                        feeling like something I had to make time for and
+                        started feeling like something that naturally
+                        belonged in my day.
+                    </p>
+
+                    <p>
+                        Something happens and my brain immediately goes,
+                        <span class="strong">
+                            “I need to tell Rose.”
+                        </span>
+                        Something funny happens and I want you to know.
+                        Something annoying happens and I want to complain
+                        to you. Something exciting happens and somehow
+                        telling you makes it feel even more exciting.
+                    </p>
+
+
+                    <div class="pullquote">
+
+                        <p>
+                            You became one of my
+                            favourite places to be myself.
+                        </p>
+
+                    </div>
+
+
+                    <p>
+                        I think that's one of the things I love most
+                        about us. I don't have to carefully construct
+                        every sentence before I send it.
+                        I don't have to wonder whether I'm being too loud,
+                        too weird, too excited, too dramatic, too random,
+                        or just completely ridiculous.
+                    </p>
+
+                    <p>
+                        I can simply exist.
+                    </p>
+
+                    <p>
+                        And somehow, with you,
+                        that has always felt enough.
+                    </p>
+
+
+                    <div class="mini-note">
+
+                        <p>
+                            “Thank you for making being myself feel easy.”
+                        </p>
+
+                    </div>
+
+
+                    <p>
+                        You understand parts of me that I don't always
+                        know how to explain. You let me talk about the
+                        tiniest things as if they matter, and you somehow
+                        make the biggest things feel a little less heavy.
+                    </p>
+
+                    <p>
+                        I can tell you things without rehearsing them first.
+                        I can say the thought exactly as it appears in my
+                        head, even when it makes absolutely no sense,
+                        and somehow you still understand what I meant.
+                    </p>
+
+                    <p>
+                        That kind of comfort is rare.
+                        <span class="highlight">
+                            And I don't take it for granted.
+                        </span>
+                    </p>
+
+                    <p>
+                        So today, on your birthday, I don't just want to
+                        wish you a happy birthday and disappear behind
+                        a pretty little cake emoji.
+                    </p>
+
+                    <p>
+                        I want you to know that somewhere in this enormous,
+                        chaotic world, there is a person who is genuinely
+                        grateful that
+                        <span class="strong">
+                            you exist.
+                        </span>
+                    </p>
+
+                    <p>
+                        Someone who notices your little things.
+                        Someone who remembers the conversations that
+                        probably meant nothing to you but somehow stayed
+                        with me. Someone who would happily listen to
+                        another completely unnecessary story because,
+                        well...
+                        <span class="highlight">
+                            it's yours.
+                        </span>
+                    </p>
+
+                    <p>
+                        And if you ever wonder whether you are loved,
+                        appreciated, remembered, or important —
+                        I hope you remember this page.
+                    </p>
+
+                    <p>
+                        Not because a website can prove anything.
+                        But because I made this entire little world
+                        just to remind you of something very simple:
+                    </p>
+
+
+                    <div class="pullquote">
+
+                        <p>
+                            You are very, very easy to love.
+                        </p>
+
+                    </div>
+
+
+                    <p>
+                        Not because you're perfect.
+                        Not because you always know what to say.
+                        Not because every day with you is some beautiful
+                        movie scene.
+                    </p>
+
+                    <p>
+                        But because you're
+                        <span class="strong">
+                            you.
+                        </span>
+                    </p>
+
+                    <p>
+                        My baby.
+                        My darling.
+                        My favourite person to tell things to.
+                        My safe little corner of chaos.
+                    </p>
+
+                    <p>
+                        My Rose.
+                    </p>
+
+
+                </div>
+
+
+                <div class="signature">
+
+                    <div class="signature-inner">
+
+                        <div class="signature-small">
+                            with all my love
+                        </div>
+
+                        <div class="signature-name">
+                            always,
+                        </div>
+
+                        <div class="signature-heart">
+                            ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="seal">
+
+                    <div class="seal-text">
+                        rose · 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+<!-- =================================
+             MEMORY INTRO
+        ================================== -->
+
+        <div class="memory-intro">
+
+            <div class="eyebrow">
+                little things · big meaning
+            </div>
+
+            <h2>
+                The things I hope
+                <em>you know.</em>
+            </h2>
+
+            <p>
+                Maybe I've said some of these before.
+                Maybe I haven't said them enough.
+                Either way, you deserve to hear them.
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+             MEMORY CARDS
+        ================================== -->
+
+        <div class="memory-grid">
+
+            <article class="memory-card">
+
+                <div class="memory-number">
+                    01
+                </div>
+
+                <h3>
+                    You make ordinary days better.
+                </h3>
+
+                <p>
+                    You don't have to do anything huge.
+                    Sometimes just having someone to talk to,
+                    laugh with, or randomly bother makes an
+                    ordinary day feel completely different.
+                </p>
+
+                <div class="card-line"></div>
+
+                <div class="card-word">
+                    everyday
+                </div>
+
+            </article>
+
+
+            <article class="memory-card">
+
+                <div class="memory-number">
+                    02
+                </div>
+
+                <h3>
+                    I never have to shrink myself around you.
+                </h3>
+
+                <p>
+                    I can be loud, dramatic, childish, excited,
+                    emotional, completely unserious, or all five
+                    at once. Somehow, you still feel like home.
+                </p>
+
+                <div class="card-line"></div>
+
+                <div class="card-word">
+                    freedom
+                </div>
+
+            </article>
+
+
+            <article class="memory-card">
+
+                <div class="memory-number">
+                    03
+                </div>
+
+                <h3>
+                    You are someone I choose again and again.
+                </h3>
+
+                <p>
+                    Not because I have to.
+                    Not because there is some rule saying I should.
+                    Simply because having you in my life feels
+                    like something worth choosing.
+                </p>
+
+                <div class="card-line"></div>
+
+                <div class="card-word">
+                    always
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================
+             CENTER QUOTE
+        ================================== -->
+
+        <div class="center-quote">
+
+            <div class="tiny">
+                and if you ever forget
+            </div>
+
+            <h2>
+                “You don't have to be extraordinary
+                every second to be
+                <span>extraordinary to me.</span>”
+            </h2>
+
+            <div class="tiny-bottom">
+                remember that, Rose.
+            </div>
+
+        </div>
+
+              <div class="little-section">
+
+            <div class="little-heading">
+
+                <div class="little-number">
+                    04
+                </div>
+
+                <div>
+                    <span class="little-kicker">
+                        the little things
+                    </span>
+
+                    <h3>
+                        Things I love
+                        <br>
+                        about you.
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <div class="little-list">
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        01
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            The way you understand me.
+                        </h4>
+
+                        <p>
+                            Sometimes I don't even need to explain
+                            everything. Somehow, you just get it.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        02
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            The way I can tell you anything.
+                        </h4>
+
+                        <p>
+                            Random thoughts, embarrassing stories,
+                            unnecessary drama, tiny victories —
+                            somehow everything becomes worth telling
+                            when it is you listening.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        03
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            Your presence.
+                        </h4>
+
+                        <p>
+                            You don't always have to do something.
+                            Sometimes just knowing you're there
+                            makes an ordinary moment feel better.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        04
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            The chaos you bring.
+                        </h4>
+
+                        <p>
+                            Because apparently my life needed
+                            another person to make everything
+                            ten times more chaotic and somehow
+                            ten times more fun.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        05
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            The comfort.
+                        </h4>
+
+                        <p>
+                            With you, I never feel like I have to
+                            carefully choose every word before
+                            letting it leave my mouth.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="little-item">
+
+                    <div class="item-no">
+                        06
+                    </div>
+
+                    <div class="item-content">
+
+                        <h4>
+                            The little world we have.
+                        </h4>
+
+                        <p>
+                            All the conversations, jokes, memories,
+                            nonsense and tiny moments that somehow
+                            became ours.
+                        </p>
+
+                    </div>
+
+                    <div class="item-mark">
+                        +
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="heart-ornament">
+
+            <span>
+                R
+            </span>
+
+        </div>
+
+
+        <div class="closing-panel">
+
+            <div class="closing-top">
+
+                <span>
+                    A LITTLE REMINDER
+                </span>
+
+                <span>
+                    04 / 10 / 2026
+                </span>
+
+            </div>
+
+
+            <div class="closing-main">
+
+                <div class="closing-small">
+                    if you ever forget
+                </div>
+
+                <h2>
+                    You are
+                    <span>so loved.</span>
+                </h2>
+
+                <p>
+                    Not because of what you do.
+                    Not because you have to be anything
+                    extraordinary.
+                    Not because you have to earn it.
+                    <br><br>
+                    Just because you are Rose.
+                    And that has always been enough.
+                </p>
+
+            </div>
+
+
+            <div class="closing-line"></div>
+
+
+            <div class="closing-bottom">
+
+                <span>
+                    with all the love
+                    <br>
+                    in this little corner of the internet
+                </span>
+
+                <strong>
+                    ♡
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="flower flower-one">
+            ✦
+        </div>
+
+        <div class="flower flower-two">
+            ✧
+        </div>
+
+        <div class="flower flower-three">
+            ·
+        </div>
+
+
+        <div class="final-navigation">
+
+            <div class="final-note">
+                <span>
+                    chapter seven
+                </span>
+
+                <p>
+                    one more little page
+                    before the birthday magic continues.
+                </p>
+            </div>
+
+
+            <a href="eight.html" class="next-page">
+
+                <span>
+                    continue
+                </span>
+
+                <strong>
+                    chapter eight →
+                </strong>
+
+            </a>
+
+        </div>
+
+
+        <div class="page-footer">
+
+            <span>
+                made especially for Rose
+            </span>
+
+            <span>
+                07
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<script>
+
+    const items = document.querySelectorAll(".little-item");
+
+    items.forEach((item) => {
+
+        item.addEventListener("click", () => {
+
+            item.classList.toggle("active");
+
+        });
+
+    });
+
+
+    const letter = document.querySelector(".letter-paper");
+
+    if (letter) {
+
+        letter.addEventListener("mousemove", (event) => {
+
+            const rect = letter.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const moveX = (x / rect.width - 0.5) * 6;
+            const moveY = (y / rect.height - 0.5) * 6;
+
+            letter.style.transform =
+                `perspective(1000px)
+                 rotateX(${-moveY}deg)
+                 rotateY(${moveX}deg)`;
+
+        });
+
+
+        letter.addEventListener("mouseleave", () => {
+
+            letter.style.transform =
+                "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+        });
+
+    }
+
+
+    const flowers = document.querySelectorAll(".flower");
+
+    flowers.forEach((flower, index) => {
+
+        flower.style.animationDelay =
+            `${index * 1.4}s`;
+
+    });
+
+</script>
+
+
+</body>
+</html>
+      

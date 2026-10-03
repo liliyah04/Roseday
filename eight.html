@@ -1,0 +1,4277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Rose — Chapter Eight</title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(145, 12, 35, 0.08),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(145, 12, 35, 0.06),
+                    transparent 30%
+                ),
+                #f8f1e7;
+
+            color: #241619;
+
+            font-family: "DM Sans", sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        ::selection {
+            background: #86172d;
+            color: #fff8f1;
+        }
+
+
+        /* =========================
+           PAGE
+        ========================= */
+
+
+        .page {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            padding:
+                34px
+                5vw
+                70px;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           DECORATIVE BORDER
+        ========================= */
+
+
+        .page::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 18px;
+
+            border: 1.5px solid
+                    rgba(104, 20, 35, 0.28);
+
+            pointer-events: none;
+
+            z-index: 20;
+        }
+
+
+        .page::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border: 1px solid
+                    rgba(104, 20, 35, 0.10);
+
+            pointer-events: none;
+
+            z-index: 20;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+
+        .topbar {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                4px 3px 35px;
+        }
+
+
+        .top-left {
+
+            font-size: 10px;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            color: #7c5960;
+        }
+
+
+        .top-right {
+
+            font-family: "Bodoni Moda",
+                         serif;
+
+            font-size: 17px;
+
+            font-style: italic;
+
+            color: #8b1b32;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+
+        .hero {
+
+            min-height: 82vh;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(280px, 0.75fr);
+
+            gap: 7vw;
+
+            align-items: center;
+
+            position: relative;
+
+            z-index: 2;
+
+            padding:
+                20px 3px 70px;
+        }
+
+
+        .hero-copy {
+
+            position: relative;
+
+            z-index: 3;
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+
+            color: #8a1c34;
+
+            font-size: 10px;
+
+            letter-spacing: 0.28em;
+
+            text-transform: uppercase;
+
+            font-weight: 600;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 42px;
+
+            height: 1px;
+
+            background: #8a1c34;
+        }
+
+
+        .hero h1 {
+
+            font-family: "Bodoni Moda",
+                         serif;
+
+            font-size: clamp(
+                58px,
+                9vw,
+                145px
+            );
+
+            line-height: 0.82;
+
+            font-weight: 500;
+
+            letter-spacing: -0.055em;
+
+            max-width: 800px;
+        }
+
+
+        .hero h1 .outline {
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1.2px #8a1c34;
+
+            display: block;
+
+            margin-left: 0.5em;
+        }
+
+
+        .hero h1 .red {
+
+            color: #8a1c34;
+
+            display: block;
+
+            margin-left: 1.05em;
+        }
+
+
+        .hero-description {
+
+            max-width: 520px;
+
+            margin-top: 38px;
+
+            padding-left: 4px;
+
+            color: #684e53;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            font-weight: 300;
+        }
+
+
+        .hero-script {
+
+            font-family: "Italianno",
+                         cursive;
+
+            font-size: 42px;
+
+            color: #8a1c34;
+
+            margin-top: 28px;
+
+            transform: rotate(-3deg);
+
+            display: inline-block;
+        }
+
+
+        /* =========================
+           MUSEUM OBJECT
+        ========================= */
+
+
+        .museum-wrap {
+
+            position: relative;
+
+            min-height: 520px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .museum-shadow {
+
+            position: absolute;
+
+            width: 270px;
+
+            height: 55px;
+
+            bottom: 55px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(60, 13, 22, 0.14);
+
+            filter: blur(18px);
+        }
+
+
+        .museum-frame {
+
+            width: min(390px, 75vw);
+
+            aspect-ratio: 0.72;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #b9a083,
+                    #eadbc7 20%,
+                    #92775f 45%,
+                    #d9c6ac 70%,
+                    #8d6c55
+                );
+
+            padding: 13px;
+
+            box-shadow:
+                0 30px 70px
+                rgba(61, 20, 26, 0.20);
+
+            transform:
+                rotate(3deg);
+        }
+
+
+        .museum-frame::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border: 1px solid
+                    rgba(73, 28, 29, 0.6);
+
+            pointer-events: none;
+        }
+
+
+        .museum-frame-inner {
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+                #f6ecde;
+
+            border: 3px solid
+                    #5f202a;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            padding: 30px;
+        }
+
+
+        .museum-frame-inner::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border: 1px solid
+                    rgba(95, 32, 42, 0.22);
+        }
+
+
+        .museum-number {
+
+            position: absolute;
+
+            top: 34px;
+
+            left: 36px;
+
+            font-size: 9px;
+
+            letter-spacing: 0.25em;
+
+            color: #8a1c34;
+        }
+
+
+        .museum-rose {
+
+            width: 145px;
+
+            height: 145px;
+
+            position: relative;
+
+            margin-bottom: 35px;
+
+            animation:
+                museumFloat 5s ease-in-out infinite;
+        }
+
+
+        .museum-rose::before,
+        .museum-rose::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border-radius:
+                55% 45% 60% 40%;
+
+            border: 2px solid
+                    #8a1c34;
+
+            transform:
+                rotate(35deg);
+
+            box-shadow:
+                inset 0 0 20px
+                rgba(138, 28, 52, 0.15);
+        }
+
+
+        .museum-rose::after {
+
+            inset: 36px;
+
+            transform:
+                rotate(-28deg);
+
+            border-color:
+                #a52a45;
+        }
+
+
+        .rose-center {
+
+            position: absolute;
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #d86b80,
+                    #8a1c34 55%,
+                    #4b101d
+                );
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            box-shadow:
+                0 8px 25px
+                rgba(90, 17, 31, 0.28);
+        }
+
+
+        .museum-label {
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .museum-label small {
+
+            display: block;
+
+            font-size: 8px;
+
+            letter-spacing: 0.3em;
+
+            text-transform: uppercase;
+
+            color: #886d70;
+
+            margin-bottom: 12px;
+        }
+
+
+        .museum-label h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 34px;
+
+            font-weight: 500;
+
+            color: #681728;
+
+            font-style: italic;
+        }
+
+
+        .museum-label p {
+
+            margin-top: 8px;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 27px;
+
+            color: #8a1c34;
+        }
+
+
+        .frame-caption {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 0;
+
+            right: 0;
+
+            text-align: center;
+
+            font-size: 8px;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+
+            color: #765d60;
+        }
+
+
+        @keyframes museumFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-2deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-9px)
+                    rotate(2deg);
+            }
+        }
+
+
+        /* =========================
+           FLOATING DETAILS
+        ========================= */
+
+
+        .floating {
+
+            position: absolute;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            color: #8a1c34;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+        }
+
+
+        .floating.one {
+
+            top: 20%;
+
+            left: 44%;
+
+            font-size: 24px;
+
+            transform: rotate(-12deg);
+        }
+
+
+        .floating.two {
+
+            top: 45%;
+
+            right: 4%;
+
+            font-size: 15px;
+
+            transform: rotate(18deg);
+        }
+
+
+        .floating.three {
+
+            bottom: 13%;
+
+            left: 48%;
+
+            font-size: 34px;
+
+            transform: rotate(8deg);
+        }
+
+
+        .floating.four {
+
+            top: 10%;
+
+            right: 18%;
+
+            font-size: 10px;
+
+            letter-spacing: 0.2em;
+
+            text-transform: uppercase;
+
+            writing-mode:
+                vertical-rl;
+        }
+
+    </style>
+
+  </head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <div class="topbar">
+
+            <div class="top-left">
+                chapter eight · the rose museum
+            </div>
+
+            <div class="top-right">
+                for Rose ♡
+            </div>
+
+        </div>
+
+
+
+        <div class="floating one">
+            ✦
+        </div>
+
+        <div class="floating two">
+            04
+        </div>
+
+        <div class="floating three">
+            +
+        </div>
+
+        <div class="floating four">
+            a collection of little things
+        </div>
+
+
+
+        <section class="hero">
+
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    exhibit no. 08
+                </div>
+
+
+                <h1>
+
+                    <span>
+                        The
+                    </span>
+
+                    <span class="outline">
+                        Rose
+                    </span>
+
+                    <span class="red">
+                        Museum.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Welcome to a very small museum dedicated
+                    to a very important person.
+
+                    <br><br>
+
+                    No expensive paintings.
+                    No ancient sculptures.
+                    No priceless artefacts.
+
+                    <br><br>
+
+                    Just little pieces of Rose —
+                    the things that make her,
+                    well...
+
+                    <strong>
+                        her.
+
+                    </strong>
+
+                </p>
+
+
+                <div class="hero-script">
+                    please look around.
+                </div>
+
+            </div>
+
+
+
+            <div class="museum-wrap">
+
+
+                <div class="museum-shadow"></div>
+
+
+                <div class="museum-frame">
+
+
+                    <div class="museum-frame-inner">
+
+
+                        <div class="museum-number">
+                            R · 001
+                        </div>
+
+
+                        <div class="museum-rose">
+
+                            <div class="rose-center"></div>
+
+                        </div>
+
+
+                        <div class="museum-label">
+
+                            <small>
+                                the original exhibit
+                            </small>
+
+                            <h2>
+                                Rose
+                            </h2>
+
+                            <p>
+                                one of one.
+                            </p>
+
+                        </div>
+
+
+                        <div class="frame-caption">
+                            rare · irreplaceable · completely herself
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="museum-intro">
+
+
+            <div class="intro-line"></div>
+
+
+            <div class="intro-grid">
+
+
+                <div class="intro-number">
+                    08
+                </div>
+
+
+                <div class="intro-title">
+
+                    <span>
+                        exhibit
+                    </span>
+
+                    <h2>
+                        Things that
+                        <br>
+                        deserve their
+                        <em>
+                            own room.
+                        </em>
+                    </h2>
+
+                </div>
+
+
+                <div class="intro-copy">
+
+                    <p>
+                        If I had to build a museum for you,
+                        I already know it wouldn't be quiet.
+                    </p>
+
+                    <p>
+                        There would be a whole room dedicated
+                        to your chaos, another one for your
+                        kindness, and probably an entire wing
+                        for all the nonsense we somehow find
+                        hilarious.
+                    </p>
+
+                    <p class="intro-last">
+                        So... welcome to it.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="exhibits">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        gallery one
+                    </span>
+
+                    <h2>
+                        The many
+                        <em>versions</em>
+                        of Rose.
+                    </h2>
+
+                </div>
+
+
+                <div class="heading-side">
+                    01 — 04
+                </div>
+
+            </div>
+
+
+
+            <div class="exhibit-grid">
+
+
+                <article class="exhibit-card card-large">
+
+
+                    <div class="card-top">
+
+                        <span>
+                            exhibit 01
+                        </span>
+
+                        <span>
+                            R / 01
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-art chaos-art">
+
+                        <div class="orbit orbit-one"></div>
+
+                        <div class="orbit orbit-two"></div>
+
+                        <div class="chaos-star">
+                            ✦
+                        </div>
+
+                        <div class="chaos-word">
+                            CHAOS
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <h3>
+                            Rose,
+                            <br>
+                            Unfiltered.
+                        </h3>
+
+                        <p>
+                            The version with no warning,
+                            no volume control, and absolutely
+                            no intention of behaving normally.
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="exhibit-card">
+
+
+                    <div class="card-top">
+
+                        <span>
+                            exhibit 02
+                        </span>
+
+                        <span>
+                            R / 02
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-art comfort-art">
+
+                        <div class="comfort-circle">
+
+                            <span>
+                                home
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <h3>
+                            Rose,
+                            <br>
+                            The Safe Place.
+                        </h3>
+
+                        <p>
+                            The person you can talk to
+                            without rehearsing the sentence
+                            first.
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="exhibit-card">
+
+
+                    <div class="card-top">
+
+                        <span>
+                            exhibit 03
+                        </span>
+
+                        <span>
+                            R / 03
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-art laughter-art">
+
+                        <div class="laugh-letter">
+                            HA
+                        </div>
+
+                        <div class="laugh-small">
+                            HAHAHA
+                        </div>
+
+                        <div class="laugh-star">
+                            +
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <h3>
+                            Rose,
+                            <br>
+                            The Laugh.
+                        </h3>
+
+                        <p>
+                            Because apparently some
+                            conversations are incapable
+                            of ending normally.
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="exhibit-card card-large">
+
+
+                    <div class="card-top">
+
+                        <span>
+                            exhibit 04
+                        </span>
+
+                        <span>
+                            R / 04
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-art heart-art">
+
+                        <div class="heart-outline">
+                            ♡
+                        </div>
+
+                        <div class="heart-script">
+                            my person
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <h3>
+                            Rose,
+                            <br>
+                            My Favourite.
+                        </h3>
+
+                        <p>
+                            Out of all the people in all
+                            the little corners of this huge
+                            world, somehow I got you.
+                            And I'm very glad I did.
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+      q        <section class="museum-notes">
+
+
+            <div class="notes-heading">
+
+                <div class="notes-number">
+                    02
+                </div>
+
+                <div>
+
+                    <span>
+                        curator's notes
+                    </span>
+
+                    <h2>
+                        A few things
+                        <br>
+                        worth preserving.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="notes-list">
+
+
+                <div class="note-row">
+
+                    <div class="note-index">
+                        01
+                    </div>
+
+
+                    <div class="note-main">
+
+                        <h3>
+                            Your ability to make
+                            everything a story.
+                        </h3>
+
+                        <p>
+                            Somehow even the smallest thing
+                            can become a full conversation when
+                            you're involved.
+                        </p>
+
+                    </div>
+
+
+                    <div class="note-side">
+                        <span>
+                            preserved
+                        </span>
+
+                        <strong>
+                            forever
+                        </strong>
+                    </div>
+
+                </div>
+
+
+
+                <div class="note-row">
+
+                    <div class="note-index">
+                        02
+                    </div>
+
+
+                    <div class="note-main">
+
+                        <h3>
+                            The way you listen.
+                        </h3>
+
+                        <p>
+                            Not just waiting for your turn to
+                            speak. Actually listening. Remembering
+                            the tiny details. Making people feel
+                            heard.
+                        </p>
+
+                    </div>
+
+
+                    <div class="note-side">
+                        <span>
+                            treasured
+                        </span>
+
+                        <strong>
+                            always
+                        </strong>
+                    </div>
+
+                </div>
+
+
+
+                <div class="note-row">
+
+                    <div class="note-index">
+                        03
+                    </div>
+
+
+                    <div class="note-main">
+
+                        <h3>
+                            The completely random moments.
+                        </h3>
+
+                        <p>
+                            The conversations that started with
+                            absolutely nothing and somehow lasted
+                            forever.
+                        </p>
+
+                    </div>
+
+
+                    <div class="note-side">
+                        <span>
+                            exhibit
+                        </span>
+
+                        <strong>
+                            priceless
+                        </strong>
+                    </div>
+
+                </div>
+
+
+
+                <div class="note-row">
+
+                    <div class="note-index">
+                        04
+                    </div>
+
+
+                    <div class="note-main">
+
+                        <h3>
+                            The fact that you are simply you.
+                        </h3>
+
+                        <p>
+                            No perfect version required.
+                            No performance.
+                            No pretending.
+                            Just Rose being Rose.
+                        </p>
+
+                    </div>
+
+
+                    <div class="note-side">
+                        <span>
+                            status
+                        </span>
+
+                        <strong>
+                            irreplaceable
+                        </strong>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="mini-gallery">
+
+
+            <div class="mini-header">
+
+                <div>
+
+                    <span>
+                        gallery two
+                    </span>
+
+                    <h2>
+                        Tiny things.
+                        <br>
+                        <em>Huge meaning.</em>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Some things are too small
+                    to deserve a giant room.
+                    So these get little frames.
+                </p>
+
+            </div>
+
+
+
+            <div class="mini-grid">
+
+
+                <div class="mini-card">
+
+                    <div class="mini-number">
+                        01
+                    </div>
+
+                    <div class="mini-symbol">
+                        ♡
+                    </div>
+
+                    <h3>
+                        “I need to
+                        tell Rose.”
+                    </h3>
+
+                    <p>
+                        The automatic thought
+                        whenever something happens.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mini-card red-card">
+
+                    <div class="mini-number">
+                        02
+                    </div>
+
+                    <div class="mini-symbol">
+                        +
+                    </div>
+
+                    <h3>
+                        The random
+                        updates.
+                    </h3>
+
+                    <p>
+                        Important information,
+                        completely useless information,
+                        and everything in between.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mini-card">
+
+                    <div class="mini-number">
+                        03
+                    </div>
+
+                    <div class="mini-symbol">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Being able
+                        to be myself.
+                    </h3>
+
+                    <p>
+                        Probably one of the most
+                        valuable exhibits in here.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mini-card">
+
+                    <div class="mini-number">
+                        04
+                    </div>
+
+                    <div class="mini-symbol">
+                        R
+                    </div>
+
+                    <h3>
+                        Just
+                        Rose.
+                    </h3>
+
+                    <p>
+                        No explanation needed.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="museum-quote">
+
+
+            <div class="quote-decoration">
+                ✦
+            </div>
+
+
+            <div class="quote-label">
+                THE MAIN EXHIBIT
+            </div>
+
+
+            <h2>
+                “Some people leave
+                <span>memories.</span>
+                <br>
+                Some people become
+                <span>one.</span>”
+            </h2>
+
+
+            <p>
+                And somehow, Rose,
+                you managed to become both.
+            </p>
+
+
+            <div class="quote-signature">
+                — from someone who is very glad you exist
+            </div>
+
+
+        </section>
+
+
+
+        <section class="museum-ticket">
+
+
+            <div class="ticket-left">
+
+                <div class="ticket-small">
+                    ADMIT ONE
+                </div>
+
+                <div class="ticket-title">
+                    THE ROSE
+                    <br>
+                    MUSEUM
+                </div>
+
+                <div class="ticket-date">
+                    04 · 10 · 2026
+                </div>
+
+            </div>
+
+
+            <div class="ticket-middle">
+
+                <div class="ticket-circle">
+                    R
+                </div>
+
+            </div>
+
+
+            <div class="ticket-right">
+
+                <span>
+                    visitor
+                </span>
+
+                <strong>
+                    YOU
+                </strong>
+
+                <small>
+                    lifetime access
+                </small>
+
+            </div>
+
+
+        </section>
+                <section class="museum-closing">
+
+
+            <div class="closing-frame">
+
+
+                <div class="closing-corner top-left">
+                    ✦
+                </div>
+
+                <div class="closing-corner top-right">
+                    ✦
+                </div>
+
+                <div class="closing-corner bottom-left">
+                    ✦
+                </div>
+
+                <div class="closing-corner bottom-right">
+                    ✦
+                </div>
+
+
+                <div class="closing-kicker">
+                    FINAL EXHIBIT
+                </div>
+
+
+                <div class="closing-number">
+                    R / ∞
+                </div>
+
+
+                <h2>
+                    And if this museum
+                    <br>
+                    ever closes...
+                </h2>
+
+
+                <div class="closing-script">
+                    I'll just build another one.
+                </div>
+
+
+                <p>
+                    Because there will always be another
+                    little thing to remember, another story
+                    to laugh about, another conversation
+                    I will want to tell you about.
+                </p>
+
+
+                <div class="closing-divider">
+                    <span></span>
+                    ♡
+                    <span></span>
+                </div>
+
+
+                <div class="closing-message">
+
+                    <strong>
+                        Happy Birthday, Rose.
+                    </strong>
+
+                    <span>
+                        Exhibit R will always be open.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="museum-plaque">
+
+
+            <div class="plaque-inner">
+
+                <div class="plaque-top">
+                    ESTABLISHED · 04 OCTOBER 2026
+                </div>
+
+
+                <h3>
+                    ROSE
+                </h3>
+
+
+                <p>
+                    A rare collection of warmth,
+                    chaos, laughter, comfort and
+                    completely irreplaceable energy.
+                </p>
+
+
+                <div class="plaque-line"></div>
+
+
+                <span>
+                    one of one · no replicas available
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <section class="next-chapter">
+
+
+            <div class="next-decoration left">
+                08
+            </div>
+
+
+            <div class="next-content">
+
+                <span>
+                    the museum closes here
+                </span>
+
+
+                <h2>
+                    But the birthday
+                    <em>
+                        continues.
+                    </em>
+                </h2>
+
+
+                <p>
+                    There is still another little chapter
+                    waiting for you, Rose.
+                </p>
+
+
+                <a href="nine.html"
+                   class="chapter-button">
+
+                    <span>
+                        continue
+                    </span>
+
+                    <strong>
+                        chapter nine →
+                    </strong>
+
+                </a>
+
+            </div>
+
+
+            <div class="next-decoration right">
+                09
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="page-footer-eight">
+
+            <span>
+                THE ROSE MUSEUM
+            </span>
+
+            <span>
+                08 / 11
+            </span>
+
+            <span>
+                made with ridiculous amounts of love
+            </span>
+
+        </footer>
+
+
+
+    </main>
+
+
+
+    <style>
+
+        /* =========================
+           MUSEUM INTRO
+        ========================= */
+
+
+        .museum-intro {
+
+            padding:
+                90px 3px 110px;
+
+            position: relative;
+        }
+
+
+        .intro-line {
+
+            width: 100%;
+
+            height: 1px;
+
+            background:
+                rgba(104, 20, 35, 0.22);
+
+            margin-bottom: 55px;
+        }
+
+
+        .intro-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                80px
+                1fr
+                1fr;
+
+            gap: 45px;
+
+            align-items: start;
+        }
+
+
+        .intro-number {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 14px;
+
+            color: #8a1c34;
+
+            padding-top: 9px;
+        }
+
+
+        .intro-title > span,
+        .section-heading span,
+        .notes-heading span,
+        .mini-header span {
+
+            display: block;
+
+            font-size: 9px;
+
+            letter-spacing: 0.27em;
+
+            text-transform: uppercase;
+
+            color: #8a1c34;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro-title h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(38px, 5vw, 70px);
+
+            line-height: 0.95;
+
+            font-weight: 500;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .intro-title em {
+
+            color: #8a1c34;
+
+            font-weight: 400;
+        }
+
+
+        .intro-copy {
+
+            padding-top: 8px;
+
+            max-width: 470px;
+
+            color: #71585c;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        .intro-copy p + p {
+
+            margin-top: 18px;
+        }
+
+
+        .intro-last {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 31px;
+
+            color: #8a1c34;
+
+            transform: rotate(-3deg);
+
+            display: inline-block;
+
+            margin-top: 8px;
+        }
+
+
+
+        /* =========================
+           EXHIBITS
+        ========================= */
+
+
+        .exhibits {
+
+            padding:
+                30px 3px 120px;
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            margin-bottom: 48px;
+        }
+
+
+        .section-heading h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(40px, 6vw, 78px);
+
+            line-height: 0.95;
+
+            font-weight: 500;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .section-heading h2 em {
+
+            color: #8a1c34;
+
+            font-weight: 400;
+        }
+
+
+        .heading-side {
+
+            font-size: 9px;
+
+            letter-spacing: 0.2em;
+
+            color: #92757a;
+
+            padding-bottom: 6px;
+        }
+
+
+        .exhibit-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 24px;
+        }
+
+
+        .exhibit-card {
+
+            background: #f3e7d8;
+
+            border: 1.5px solid
+                    rgba(104, 20, 35, 0.35);
+
+            padding: 16px;
+
+            position: relative;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .exhibit-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 24px 45px
+                rgba(83, 21, 31, 0.12);
+        }
+
+
+        .card-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #8a1c34;
+
+            font-size: 8px;
+
+            letter-spacing: 0.2em;
+
+            text-transform: uppercase;
+
+            padding-bottom: 13px;
+        }
+
+
+        .card-art {
+
+            height: 300px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid
+                    rgba(104, 20, 35, 0.18);
+        }
+
+
+        .chaos-art {
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    #d9a0a7,
+                    #9a263f 32%,
+                    #5c1424 72%,
+                    #391019
+                );
+
+            color: #fff4eb;
+        }
+
+
+        .orbit {
+
+            position: absolute;
+
+            border: 1px solid
+                    rgba(255,255,255,0.45);
+
+            border-radius: 50%;
+        }
+
+
+        .orbit-one {
+
+            width: 260px;
+            height: 110px;
+
+            transform:
+                rotate(28deg);
+        }
+
+
+        .orbit-two {
+
+            width: 180px;
+            height: 270px;
+
+            transform:
+                rotate(-34deg);
+        }
+
+
+        .chaos-star {
+
+            position: absolute;
+
+            top: 35px;
+
+            right: 45px;
+
+            font-size: 26px;
+        }
+
+
+        .chaos-word {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 52px;
+
+            letter-spacing: -0.04em;
+
+            transform:
+                rotate(-8deg);
+        }
+
+
+        .comfort-art {
+
+            background:
+                #e8d8c5;
+        }
+
+
+        .comfort-circle {
+
+            width: 190px;
+
+            height: 190px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                    #8a1c34;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        .comfort-circle::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border: 1px solid
+                    rgba(138, 28, 52, 0.35);
+
+            border-radius: 50%;
+        }
+
+
+        .comfort-circle span {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 54px;
+
+            color: #8a1c34;
+
+            transform:
+                rotate(-6deg);
+        }
+
+
+        .laughter-art {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1ddcf,
+                    #c87583
+                );
+        }
+
+
+        .laugh-letter {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 105px;
+
+            color: #fff5ec;
+
+            line-height: 1;
+
+            transform:
+                rotate(-8deg);
+        }
+
+
+        .laugh-small {
+
+            position: absolute;
+
+            top: 45px;
+
+            right: 30px;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 32px;
+
+            color: #8a1c34;
+
+            transform:
+                rotate(12deg);
+        }
+
+
+        .laugh-star {
+
+            position: absolute;
+
+            bottom: 40px;
+
+            left: 38px;
+
+            font-size: 30px;
+
+            color: #8a1c34;
+        }
+
+
+        .heart-art {
+
+            background:
+                #efe0d2;
+        }
+
+
+        .heart-outline {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 170px;
+
+            line-height: 1;
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px #8a1c34;
+
+            transform:
+                rotate(-5deg);
+        }
+
+
+        .heart-script {
+
+            position: absolute;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 48px;
+
+            color: #8a1c34;
+
+            transform:
+                rotate(-8deg);
+        }
+
+
+        .card-info {
+
+            padding:
+                23px 8px 12px;
+        }
+
+
+        .card-info h3 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 29px;
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            color: #551522;
+        }
+
+
+        .card-info p {
+
+            margin-top: 15px;
+
+            max-width: 440px;
+
+            color: #755c60;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =========================
+           CURATOR NOTES
+        ========================= */
+
+
+        .museum-notes {
+
+            padding:
+                95px 3px 110px;
+
+            background:
+                #efe2d2;
+
+            margin:
+                0 -5vw;
+
+            padding-left: 8vw;
+
+            padding-right: 8vw;
+
+            position: relative;
+        }
+
+
+        .museum-notes::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 5%;
+
+            right: 5%;
+
+            top: 25px;
+
+            bottom: 25px;
+
+            border: 1px solid
+                    rgba(104, 20, 35, 0.16);
+
+            pointer-events: none;
+        }
+
+
+        .notes-heading {
+
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr;
+
+            gap: 35px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .notes-number {
+
+            color: #8a1c34;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 14px;
+        }
+
+
+        .notes-heading h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(40px, 5vw, 70px);
+
+            line-height: 0.92;
+
+            font-weight: 500;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .notes-list {
+
+            border-top: 1px solid
+                        rgba(104, 20, 35, 0.25);
+        }
+
+
+        .note-row {
+
+            display: grid;
+
+            grid-template-columns:
+                70px 1fr 170px;
+
+            gap: 35px;
+
+            padding:
+                35px 0;
+
+            border-bottom: 1px solid
+                        rgba(104, 20, 35, 0.20);
+
+            align-items: start;
+        }
+
+
+        .note-index {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            color: #8a1c34;
+
+            font-size: 13px;
+        }
+
+
+        .note-main h3 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            color: #5d1825;
+        }
+
+
+        .note-main p {
+
+            max-width: 580px;
+
+            margin-top: 10px;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            color: #765d60;
+        }
+
+
+        .note-side {
+
+            text-align: right;
+
+            padding-top: 4px;
+        }
+
+
+        .note-side span {
+
+            display: block;
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.2em;
+
+            color: #94777b;
+        }
+
+
+        .note-side strong {
+
+            display: block;
+
+            margin-top: 6px;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 28px;
+
+            color: #8a1c34;
+
+            font-weight: 400;
+        }
+
+
+
+        /* =========================
+           MINI GALLERY
+        ========================= */
+
+
+        .mini-gallery {
+
+            padding:
+                115px 3px;
+        }
+
+
+        .mini-header {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 0.6fr;
+
+            gap: 50px;
+
+            align-items: end;
+
+            margin-bottom: 50px;
+        }
+
+
+        .mini-header h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 80px);
+
+            line-height: 0.9;
+
+            font-weight: 500;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .mini-header h2 em {
+
+            color: #8a1c34;
+
+            font-weight: 400;
+        }
+
+
+        .mini-header > p {
+
+            max-width: 350px;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            color: #765d60;
+        }
+
+
+        .mini-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .mini-card {
+
+            min-height: 260px;
+
+            border: 1.5px solid
+                    rgba(104, 20, 35, 0.3);
+
+            padding: 23px;
+
+            position: relative;
+
+            background: #f8eee2;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .mini-card:hover {
+
+            transform:
+                translateY(-6px)
+                rotate(-1deg);
+        }
+
+
+        .mini-card.red-card {
+
+            background: #7c1930;
+
+            color: #fff4eb;
+
+            border-color: #7c1930;
+        }
+
+
+        .mini-number {
+
+            font-size: 8px;
+
+            letter-spacing: 0.2em;
+
+            color: #8a1c34;
+        }
+
+
+        .red-card .mini-number {
+
+            color: #f2c4c8;
+        }
+
+
+        .mini-symbol {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 42px;
+
+            color: #8a1c34;
+
+            margin:
+                32px 0 18px;
+        }
+
+
+        .red-card .mini-symbol {
+
+            color: #f5d8d5;
+        }
+
+
+        .mini-card h3 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 25px;
+
+            line-height: 1;
+
+            font-weight: 500;
+        }
+
+
+        .mini-card p {
+
+            margin-top: 14px;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            color: #765d60;
+        }
+
+
+        .red-card p {
+
+            color: #ead0d1;
+        }
+
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+
+        .museum-quote {
+
+            min-height: 580px;
+
+            margin:
+                0 -5vw;
+
+            background:
+                #75172d;
+
+            color: #fff4eb;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 10vw;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .museum-quote::before {
+
+            content: "ROSE";
+
+            position: absolute;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size: 22vw;
+
+            line-height: 1;
+
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,0.08);
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+        }
+
+
+        .quote-decoration {
+
+            font-size: 20px;
+
+            margin-bottom: 25px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .quote-label {
+
+            font-size: 8px;
+
+            letter-spacing: 0.35em;
+
+            margin-bottom: 35px;
+
+            opacity: 0.7;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .museum-quote h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(35px, 5vw, 70px);
+
+            line-height: 1.05;
+
+            font-weight: 400;
+
+            letter-spacing: -0.035em;
+
+            max-width: 950px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .museum-quote h2 span {
+
+            color: #f3b7bf;
+
+            font-style: italic;
+        }
+
+
+        .museum-quote > p {
+
+            margin-top: 30px;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size: 34px;
+
+            color: #f1c8cb;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .quote-signature {
+
+            margin-top: 35px;
+
+            font-size: 9px;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            opacity: 0.6;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+
+              .museum-quote h2 {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            max-width:
+                850px;
+
+            margin:
+                0 auto;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(40px, 6vw, 72px);
+
+            line-height:
+                1;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                -0.04em;
+        }
+
+
+        .museum-quote > p {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            margin:
+                35px auto 0;
+
+            max-width:
+                550px;
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            font-size:
+                34px;
+
+            line-height:
+                1.2;
+        }
+
+
+        .quote-signature {
+
+            margin-top:
+                35px;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                0.12em;
+
+            text-transform:
+                uppercase;
+
+            opacity:
+                0.6;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+
+        /* =========================
+           TICKET
+        ========================= */
+
+
+        .museum-ticket {
+
+            margin:
+                100px auto;
+
+            max-width:
+                950px;
+
+            min-height:
+                180px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 0.45fr 0.75fr;
+
+            background:
+                #f0e1d1;
+
+            border:
+                1.5px solid
+                rgba(104, 20, 35, 0.45);
+
+            position:
+                relative;
+
+            box-shadow:
+                0 20px 50px
+                rgba(69, 22, 29, 0.10);
+        }
+
+
+        .ticket-left,
+        .ticket-middle,
+        .ticket-right {
+
+            padding:
+                28px;
+        }
+
+
+        .ticket-left {
+
+            border-right:
+                1px dashed
+                rgba(104, 20, 35, 0.35);
+        }
+
+
+        .ticket-small {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.25em;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .ticket-title {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                29px;
+
+            line-height:
+                0.9;
+
+            color:
+                #5b1724;
+
+            margin-top:
+                25px;
+        }
+
+
+        .ticket-date {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.2em;
+
+            margin-top:
+                22px;
+
+            color:
+                #876c70;
+        }
+
+
+        .ticket-middle {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-right:
+                1px dashed
+                rgba(104, 20, 35, 0.35);
+        }
+
+
+        .ticket-circle {
+
+            width:
+                75px;
+
+            height:
+                75px;
+
+            border-radius:
+                50%;
+
+            border:
+                1px solid
+                #8a1c34;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                30px;
+
+            color:
+                #8a1c34;
+
+            font-style:
+                italic;
+        }
+
+
+        .ticket-right {
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+        }
+
+
+        .ticket-right span {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.2em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #8b7073;
+        }
+
+
+        .ticket-right strong {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                27px;
+
+            color:
+                #5b1724;
+
+            margin-top:
+                5px;
+        }
+
+
+        .ticket-right small {
+
+            margin-top:
+                7px;
+
+            font-size:
+                9px;
+
+            color:
+                #8a1c34;
+        }
+
+
+
+        /* =========================
+           CLOSING
+        ========================= */
+
+
+        .museum-closing {
+
+            padding:
+                50px 3px 110px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+        }
+
+
+        .closing-frame {
+
+            width:
+                min(900px, 100%);
+
+            min-height:
+                550px;
+
+            border:
+                1.5px solid
+                #8a1c34;
+
+            background:
+                #f7ecdf;
+
+            position:
+                relative;
+
+            text-align:
+                center;
+
+            padding:
+                85px 10vw;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            box-shadow:
+                0 25px 60px
+                rgba(78, 20, 29, 0.10);
+        }
+
+
+        .closing-frame::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                12px;
+
+            border:
+                1px solid
+                rgba(138, 28, 52, 0.25);
+
+            pointer-events:
+                none;
+        }
+
+
+        .closing-corner {
+
+            position:
+                absolute;
+
+            font-size:
+                15px;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .closing-corner.top-left {
+
+            top:
+                25px;
+
+            left:
+                28px;
+        }
+
+
+        .closing-corner.top-right {
+
+            top:
+                25px;
+
+            right:
+                28px;
+        }
+
+
+        .closing-corner.bottom-left {
+
+            bottom:
+                25px;
+
+            left:
+                28px;
+        }
+
+
+        .closing-corner.bottom-right {
+
+            bottom:
+                25px;
+
+            right:
+                28px;
+        }
+
+
+        .closing-kicker {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.3em;
+
+            color:
+                #8a1c34;
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .closing-number {
+
+            position:
+                absolute;
+
+            top:
+                27px;
+
+            right:
+                50%;
+
+            transform:
+                translateX(50%);
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.2em;
+
+            color:
+                #9b7e82;
+        }
+
+
+        .closing-frame h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 75px);
+
+            line-height:
+                0.95;
+
+            font-weight:
+                500;
+
+            color:
+                #5b1724;
+
+            letter-spacing:
+                -0.04em;
+        }
+
+
+        .closing-script {
+
+            font-family:
+                "Italianno",
+                cursive;
+
+            color:
+                #8a1c34;
+
+            font-size:
+                42px;
+
+            margin-top:
+                20px;
+
+            transform:
+                rotate(-3deg);
+        }
+
+
+        .closing-frame > p {
+
+            max-width:
+                520px;
+
+            margin-top:
+                28px;
+
+            color:
+                #755b60;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.9;
+        }
+
+
+        .closing-divider {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+
+            margin-top:
+                35px;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .closing-divider span {
+
+            width:
+                55px;
+
+            height:
+                1px;
+
+            background:
+                rgba(138, 28, 52, 0.35);
+        }
+
+
+        .closing-message {
+
+            margin-top:
+                25px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                5px;
+        }
+
+
+        .closing-message strong {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                16px;
+
+            color:
+                #681728;
+        }
+
+
+        .closing-message span {
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                0.1em;
+
+            color:
+                #967b7e;
+        }
+
+
+
+        /* =========================
+           PLAQUE
+        ========================= */
+
+
+        .museum-plaque {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            padding:
+                0 3px 110px;
+        }
+
+
+        .plaque-inner {
+
+            width:
+                min(550px, 100%);
+
+            text-align:
+                center;
+
+            border:
+                1px solid
+                rgba(104, 20, 35, 0.35);
+
+            padding:
+                35px 40px;
+
+            background:
+                #eadbc9;
+        }
+
+
+        .plaque-top {
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.3em;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .plaque-inner h3 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                40px;
+
+            font-weight:
+                500;
+
+            color:
+                #681728;
+
+            margin-top:
+                18px;
+        }
+
+
+        .plaque-inner p {
+
+            font-size:
+                11px;
+
+            line-height:
+                1.8;
+
+            color:
+                #755b60;
+
+            max-width:
+                380px;
+
+            margin:
+                10px auto 18px;
+        }
+
+
+        .plaque-line {
+
+            width:
+                70px;
+
+            height:
+                1px;
+
+            background:
+                #8a1c34;
+
+            margin:
+                0 auto 15px;
+        }
+
+
+        .plaque-inner span {
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.18em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #927579;
+        }
+
+
+
+        /* =========================
+           NEXT CHAPTER
+        ========================= */
+
+
+        .next-chapter {
+
+            margin:
+                0 -5vw;
+
+            padding:
+                110px 10vw;
+
+            background:
+                #f0e4d5;
+
+            border-top:
+                1px solid
+                rgba(104, 20, 35, 0.18);
+
+            display:
+                grid;
+
+            grid-template-columns:
+                100px 1fr 100px;
+
+            align-items:
+                center;
+
+            text-align:
+                center;
+        }
+
+
+        .next-decoration {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                12px;
+
+            color:
+                #8a1c34;
+        }
+
+
+        .next-content > span {
+
+            display:
+                block;
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.28em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #927579;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .next-content h2 {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                clamp(42px, 6vw, 75px);
+
+            line-height:
+                0.9;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                -0.045em;
+
+            color:
+                #5b1724;
+        }
+
+
+        .next-content h2 em {
+
+            color:
+                #8a1c34;
+
+            font-weight:
+                400;
+        }
+
+
+        .next-content > p {
+
+            margin:
+                22px auto 30px;
+
+            font-size:
+                12px;
+
+            color:
+                #765d60;
+        }
+
+
+        .chapter-button {
+
+            display:
+                inline-flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                5px;
+
+            min-width:
+                190px;
+
+            padding:
+                17px 28px;
+
+            border:
+                1.5px solid
+                #8a1c34;
+
+            color:
+                #8a1c34;
+
+            text-decoration:
+                none;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .chapter-button span {
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                0.25em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .chapter-button strong {
+
+            font-family:
+                "Bodoni Moda",
+                serif;
+
+            font-size:
+                18px;
+
+            font-weight:
+                500;
+        }
+
+
+        .chapter-button:hover {
+
+            background:
+                #8a1c34;
+
+            color:
+                #fff4eb;
+
+            transform:
+                translateY(-4px);
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+
+        .page-footer-eight {
+
+            padding:
+                35px 3px 10px;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            font-size:
+                7px;
+
+            letter-spacing:
+                0.2em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                #9b7e82;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+
+        @media(max-width: 800px) {
+
+            .page {
+
+                padding:
+                    25px 7vw 50px;
+            }
+
+
+            .page::before {
+
+                inset:
+                    12px;
+            }
+
+
+            .page::after {
+
+                inset:
+                    18px;
+            }
+
+
+            .hero {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    30px;
+
+                padding-top:
+                    40px;
+            }
+
+
+            .museum-wrap {
+
+                min-height:
+                    430px;
+            }
+
+
+            .museum-frame {
+
+                width:
+                    min(330px, 78vw);
+            }
+
+
+            .intro-grid {
+
+                grid-template-columns:
+                    45px 1fr;
+
+                gap:
+                    20px;
+            }
+
+
+            .intro-copy {
+
+                grid-column:
+                    2;
+            }
+
+
+            .exhibit-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .card-large {
+
+                grid-column:
+                    auto;
+            }
+
+
+            .museum-notes {
+
+                margin:
+                    0 -7vw;
+
+                padding-left:
+                    9vw;
+
+                padding-right:
+                    9vw;
+            }
+
+
+            .note-row {
+
+                grid-template-columns:
+                    35px 1fr;
+
+                gap:
+                    15px;
+            }
+
+
+            .note-side {
+
+                grid-column:
+                    2;
+
+                text-align:
+                    left;
+
+                margin-top:
+                    5px;
+            }
+
+
+            .mini-header {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    25px;
+            }
+
+
+            .mini-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .museum-quote {
+
+                margin:
+                    0 -7vw;
+
+                padding:
+                    75px 8vw;
+            }
+
+
+            .museum-ticket {
+
+                grid-template-columns:
+                    1fr;
+
+                margin:
+                    70px auto;
+            }
+
+
+            .ticket-left {
+
+                border-right:
+                    0;
+
+                border-bottom:
+                    1px dashed
+                    rgba(104, 20, 35, 0.35);
+            }
+
+
+            .ticket-middle {
+
+                border-right:
+                    0;
+
+                border-bottom:
+                    1px dashed
+                    rgba(104, 20, 35, 0.35);
+            }
+
+
+            .ticket-right {
+
+                min-height:
+                    130px;
+            }
+
+
+            .closing-frame {
+
+                padding:
+                    75px 8vw;
+            }
+
+
+            .next-chapter {
+
+                margin:
+                    0 -7vw;
+
+                padding:
+                    90px 7vw;
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .next-decoration {
+
+                display:
+                    none;
+            }
+
+
+            .page-footer-eight {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    center;
+
+                text-align:
+                    center;
+
+                padding-bottom:
+                    0;
+            }
+        }
+
+
+
+        @media(max-width: 480px) {
+
+            .top-left {
+
+                font-size:
+                    7px;
+
+                letter-spacing:
+                    0.16em;
+            }
+
+
+            .top-right {
+
+                font-size:
+                    14px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    58px;
+            }
+
+
+            .hero h1 .outline {
+
+                margin-left:
+                    0;
+            }
+
+
+            .hero h1 .red {
+
+                margin-left:
+                    0.45em;
+            }
+
+
+            .museum-frame {
+
+                width:
+                    285px;
+            }
+
+
+            .museum-frame-inner {
+
+                padding:
+                    20px;
+            }
+
+
+            .museum-rose {
+
+                transform:
+                    scale(0.85);
+            }
+
+
+            .section-heading {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    18px;
+            }
+
+
+            .card-art {
+
+                height:
+                    260px;
+            }
+
+
+            .mini-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .mini-card {
+
+                min-height:
+                    220px;
+            }
+
+
+            .museum-quote h2 {
+
+                font-size:
+                    37px;
+            }
+
+
+            .museum-quote > p {
+        <!-- =========================
+             MUSEUM PLAQUE
+        ========================= -->
+
+        <section class="museum-plaque">
+
+            <div class="plaque-inner">
+
+                <div class="plaque-top">
+                    PERMANENT EXHIBIT
+                </div>
+
+                <h3>Rose</h3>
+
+                <p>
+                    A rare kind of person,
+                    impossible to replace,
+                    and somehow even harder
+                    to explain.
+                </p>
+
+                <div class="plaque-line"></div>
+
+                <span>
+                    loved, remembered, celebrated
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEXT CHAPTER
+        ========================= -->
+
+        <section class="next-chapter">
+
+            <div class="next-decoration">
+                ✦
+            </div>
+
+            <div class="next-content">
+
+                <span>
+                    the exhibition continues
+                </span>
+
+                <h2>
+                    There is still
+                    <em>more.</em>
+                </h2>
+
+                <p>
+                    And honestly, we are nowhere near
+                    finished celebrating you.
+                </p>
+
+                <a
+                    href="nine.html"
+                    class="chapter-button"
+                >
+                    <span>chapter nine</span>
+                    <strong>keep going →</strong>
+                </a>
+
+            </div>
+
+            <div class="next-decoration">
+                ✦
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer class="page-footer-eight">
+
+            <span>
+                the rose museum
+            </span>
+
+            <span>
+                exhibit no. 08
+            </span>
+
+            <span>
+                made with love
+            </span>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

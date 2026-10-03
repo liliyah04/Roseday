@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Little Story</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,900&family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --cream: #f7efe4;
+      --paper: #fffaf3;
+      --red: #c8102e;
+      --bright: #ed1739;
+      --deep: #700718;
+      --wine: #4b0612;
+      --dark: #260208;
+      --text: #26171a;
+      --muted: #806166;
+      --line: rgba(112, 7, 24, .25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(200,16,46,.08),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(112,7,24,.08),
+          transparent 30%
+        ),
+        var(--cream);
+
+      color: var(--text);
+
+      font-family: "DM Sans", sans-serif;
+
+      overflow-x: hidden;
+    }
+
+
+    /* =================================
+       FRAME
+    ================================= */
+
+    .page {
+      width: calc(100% - 28px);
+      min-height: calc(100vh - 28px);
+
+      margin: 14px auto;
+
+      background: var(--paper);
+
+      border: 2px solid var(--wine);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    /* =================================
+       HEADER
+    ================================= */
+
+    header {
+      height: 70px;
+
+      border-bottom: 2px solid var(--wine);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 32px;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: .2em;
+
+      color: var(--wine);
+    }
+
+    header span:last-child {
+      color: var(--red);
+    }
+
+
+    /* =================================
+       MAIN
+    ================================= */
+
+    main {
+      position: relative;
+
+      min-height: 720px;
+
+      padding: 70px 7vw 90px;
+    }
+
+
+    /* =================================
+       BACKGROUND GIANT WORD
+    ================================= */
+
+    .ghost {
+      position: absolute;
+
+      left: -30px;
+      bottom: -75px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: clamp(250px, 34vw, 500px);
+
+      font-weight: 900;
+
+      line-height: .7;
+
+      color: rgba(200,16,46,.045);
+
+      letter-spacing: -.1em;
+
+      user-select: none;
+    }
+
+
+    /* =================================
+       INTRO
+    ================================= */
+
+    .intro {
+      position: relative;
+
+      z-index: 4;
+
+      max-width: 680px;
+    }
+
+    .eyebrow {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 23px;
+
+      color: var(--red);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: .27em;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 42px;
+      height: 2px;
+
+      background: var(--red);
+    }
+
+
+    h1 {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: clamp(58px, 8vw, 115px);
+
+      line-height: .82;
+
+      font-weight: 700;
+
+      letter-spacing: -.07em;
+
+      color: var(--wine);
+    }
+
+    h1 em {
+
+      display: block;
+
+      margin-left: 90px;
+      margin-top: 8px;
+
+      color: var(--red);
+
+      font-style: italic;
+    }
+
+
+    .intro-text {
+
+      margin-top: 35px;
+
+      max-width: 500px;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+    }
+
+    .intro-text strong {
+      color: var(--wine);
+    }
+
+
+    /* =================================
+       RED EDITORIAL STRIP
+    ================================= */
+
+    .red-strip {
+
+      position: absolute;
+
+      right: 5.5vw;
+      top: 115px;
+
+      width: 340px;
+      height: 515px;
+
+      background:
+        radial-gradient(
+          circle at 24% 12%,
+          rgba(255,255,255,.85) 0 2%,
+          rgba(255,255,255,.18) 3%,
+          transparent 13%
+        ),
+        linear-gradient(
+          150deg,
+          var(--bright),
+          var(--red) 43%,
+          var(--deep)
+        );
+
+      border: 2px solid var(--wine);
+
+      transform: rotate(5deg);
+
+      box-shadow:
+        15px 18px 0 rgba(75,6,18,.14),
+        inset -20px -30px 45px rgba(40,0,8,.25);
+
+      z-index: 1;
+
+      overflow: hidden;
+    }
+
+    .red-strip::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 170%;
+
+      height: 85px;
+
+      left: -30%;
+      top: 115px;
+
+      background: rgba(255,255,255,.1);
+
+      transform: rotate(-29deg);
+
+      filter: blur(2px);
+    }
+
+
+    /* =================================
+       US CENTERPIECE
+    ================================= */
+
+    .us {
+
+      position: absolute;
+
+      right: 7.3vw;
+      top: 235px;
+
+      width: 340px;
+
+      text-align: center;
+
+      z-index: 5;
+
+      color: var(--paper);
+    }
+
+    .us-big {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: clamp(115px, 14vw, 180px);
+
+      line-height: .7;
+
+      font-weight: 700;
+
+      letter-spacing: -.12em;
+
+      margin-right: 25px;
+
+      text-shadow:
+        0 5px 0 rgba(60,0,10,.25);
+    }
+
+    .us-script {
+
+      font-family: "Italianno", cursive;
+
+      font-size: 65px;
+
+      margin-top: 25px;
+
+      transform: rotate(-7deg);
+
+      color: #fff4ec;
+    }
+
+    .us-caption {
+
+      margin-top: 20px;
+
+      font-size: 9px;
+
+      letter-spacing: .33em;
+
+      text-transform: uppercase;
+
+      font-weight: 700;
+
+      opacity: .9;
+    }
+
+
+    /* =================================
+       MEMORY CARDS
+    ================================= */
+
+    .memories {
+
+      position: relative;
+
+      z-index: 6;
+
+      margin-top: 75px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      max-width: 690px;
+    }
+
+    .memory {
+
+      min-height: 145px;
+
+      background: var(--paper);
+
+      border: 2px solid var(--wine);
+
+      padding: 22px;
+
+      position: relative;
+
+      box-shadow:
+        6px 7px 0 rgba(75,6,18,.13);
+
+      transition: .25s ease;
+    }
+
+    .memory:nth-child(2) {
+      transform: translateY(18px);
+    }
+
+    .memory:nth-child(3) {
+      transform: translateY(-4px);
+    }
+
+    .memory:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        9px 10px 0 rgba(75,6,18,.18);
+    }
+
+    .memory:nth-child(2):hover {
+      transform: translateY(13px);
+    }
+
+    .memory-number {
+
+      color: var(--red);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .memory h3 {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 22px;
+
+      line-height: 1.05;
+
+      color: var(--wine);
+
+      margin-bottom: 9px;
+    }
+
+    .memory p {
+
+      font-size: 11px;
+
+      line-height: 1.6;
+
+      color: var(--muted);
+    }
+
+
+    /* =================================
+       ORNAMENT
+    ================================= */
+
+    .ornament {
+
+      position: absolute;
+
+      left: 5vw;
+      bottom: 70px;
+
+      width: 90px;
+      height: 90px;
+
+      border: 2px solid var(--red);
+
+      border-radius: 50%;
+
+      opacity: .8;
+    }
+
+    .ornament::before,
+    .ornament::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 12px;
+
+      border: 1px solid var(--red);
+
+      border-radius: 50%;
+    }
+
+    .ornament::after {
+
+      inset: 27px;
+
+      border-radius: 0;
+
+      transform: rotate(45deg);
+    }
+
+
+    /* =================================
+       SPARKLES
+    ================================= */
+
+    .spark {
+      position: absolute;
+
+      color: var(--red);
+
+      font-family: "Bodoni Moda", serif;
+
+      z-index: 10;
+    }
+
+    .spark.one {
+      right: 39%;
+      top: 100px;
+      font-size: 35px;
+    }
+
+    .spark.two {
+      right: 6%;
+      bottom: 110px;
+      font-size: 27px;
+    }
+
+    .spark.three {
+      left: 4%;
+      top: 44%;
+      font-size: 22px;
+    }
+
+
+    /* =================================
+       BOTTOM
+    ================================= */
+
+    footer {
+
+      min-height: 85px;
+
+      border-top: 2px solid var(--wine);
+
+      padding: 17px 32px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    footer p {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-style: italic;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .next {
+
+      text-decoration: none;
+
+      color: var(--paper);
+
+      background: var(--red);
+
+      border: 2px solid var(--wine);
+
+      padding: 14px 22px;
+
+      box-shadow: 5px 5px 0 var(--wine);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .16em;
+
+      transition: .2s ease;
+    }
+
+    .next:hover {
+
+      background: var(--bright);
+
+      transform: translate(3px,3px);
+
+      box-shadow: 2px 2px 0 var(--wine);
+    }
+
+
+    /* =================================
+       MOBILE
+    ================================= */
+
+    @media(max-width: 850px) {
+
+      .page {
+        width: calc(100% - 18px);
+        margin: 9px auto;
+      }
+
+      header {
+        padding: 0 20px;
+      }
+
+      main {
+
+        min-height: 1100px;
+
+        padding:
+          50px
+          25px
+          280px;
+      }
+
+      h1 {
+        font-size: 70px;
+      }
+
+      h1 em {
+        margin-left: 40px;
+      }
+
+      .red-strip {
+
+        top: auto;
+        bottom: 115px;
+        right: 30px;
+
+        width: 260px;
+        height: 350px;
+      }
+
+      .us {
+
+        top: auto;
+        bottom: 175px;
+        right: 40px;
+
+        width: 240px;
+      }
+
+      .us-big {
+        font-size: 115px;
+      }
+
+      .us-script {
+        font-size: 52px;
+      }
+
+      .memories {
+
+        grid-template-columns: 1fr;
+
+        max-width: 85%;
+
+        margin-top: 55px;
+      }
+
+      .memory:nth-child(2),
+      .memory:nth-child(3) {
+        transform: none;
+      }
+
+      .memory:nth-child(2):hover {
+        transform: translateY(-5px);
+      }
+
+      .ornament {
+        bottom: 40px;
+      }
+
+      footer {
+        padding: 17px 20px;
+        justify-content: flex-end;
+      }
+
+      footer p {
+        display: none;
+      }
+    }
+
+
+    @media(max-width: 480px) {
+
+      main {
+        min-height: 1060px;
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+
+      .intro-text {
+        font-size: 13px;
+      }
+
+      .red-strip {
+        width: 225px;
+        height: 310px;
+      }
+
+      .us {
+        width: 210px;
+      }
+
+      .us-big {
+        font-size: 100px;
+      }
+
+      .memories {
+        max-width: 92%;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <header>
+      <span>chapter three · us</span>
+      <span>rose × me</span>
+    </header>
+
+
+    <main>
+
+      <div class="ghost">US</div>
+
+
+      <span class="spark one">✦</span>
+      <span class="spark two">✦</span>
+      <span class="spark three">✧</span>
+
+
+      <section class="intro">
+
+        <div class="eyebrow">
+          once upon a friendship
+        </div>
+
+        <h1>
+          Our
+          <em>little story.</em>
+        </h1>
+
+        <p class="intro-text">
+          There are friendships that happen quietly,
+          almost without anyone noticing.
+          And then there are the ones that somehow become
+          <strong>their own little universe.</strong>
+          <br><br>
+          Ours is somewhere between chaos, comfort,
+          countless conversations, and those tiny moments
+          that probably meant nothing to the rest of the world
+          but somehow meant <strong>everything to us.</strong>
+        </p>
+
+      </section>
+
+
+      <div class="red-strip"></div>
+
+
+      <div class="us">
+
+        <div class="us-big">
+          US
+        </div>
+
+        <div class="us-script">
+          somehow, always.
+        </div>
+
+        <div class="us-caption">
+          two people · one ridiculous little universe
+        </div>
+
+      </div>
+
+
+      <section class="memories">
+
+        <article class="memory">
+
+          <div class="memory-number">
+            chapter 01
+          </div>
+
+          <h3>
+            The beginning
+          </h3>
+
+          <p>
+            Before all the inside jokes and random conversations,
+            there was simply a beginning.
+          </p>
+
+        </article>
+
+
+        <article class="memory">
+
+          <div class="memory-number">
+            chapter 02
+          </div>
+
+          <h3>
+            Then somehow...
+          </h3>
+
+          <p>
+            You stopped being just someone I knew
+            and became someone I couldn't imagine
+            not knowing.
+          </p>
+
+        </article>
+
+
+        <article class="memory">
+
+          <div class="memory-number">
+            chapter 03
+          </div>
+
+          <h3>
+            Here we are.
+          </h3>
+
+          <p>
+            Still laughing, still talking,
+            still collecting tiny moments
+            that somehow become memories.
+          </p>
+
+        </article>
+
+      </section>
+
+
+      <div class="ornament"></div>
+
+    </main>
+
+
+    <footer>
+
+      <p>
+        some stories are written in pages.
+        ours is written in moments.
+      </p>
+
+      <a href="four.html" class="next">
+        next chapter →
+      </a>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>

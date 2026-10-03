@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Open When — Rose</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap');
+
+:root {
+    --cream: #f8f1e7;
+    --paper: #fffaf3;
+    --red: #a7192e;
+    --deep: #711321;
+    --dark: #391016;
+    --muted: #795b5c;
+    --line: rgba(113, 19, 33, .22);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+body::selection {
+    background: var(--red);
+    color: white;
+}
+
+/* ---------------- BACKGROUND DETAILS ---------------- */
+
+.background-circle {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(167, 25, 46, .13);
+    border-radius: 50%;
+    top: -210px;
+    right: -150px;
+    pointer-events: none;
+}
+
+.background-circle.two {
+    width: 300px;
+    height: 300px;
+    top: auto;
+    right: auto;
+    bottom: -160px;
+    left: -120px;
+}
+
+.background-line {
+    position: fixed;
+    height: 1px;
+    width: 100vw;
+    background: rgba(113, 19, 33, .07);
+    top: 50%;
+    left: 0;
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+
+/* ---------------- MAIN PAGE ---------------- */
+
+.page {
+    min-height: 100vh;
+    padding: 35px 6vw 60px;
+    position: relative;
+}
+
+.topbar {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.page-no {
+    font-family: "Bodoni Moda", serif;
+    font-size: 13px;
+    color: var(--deep);
+}
+
+/* ---------------- INTRO ---------------- */
+
+.intro {
+    max-width: 1250px;
+    margin: 75px auto 55px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-small {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 500;
+    font-size: clamp(58px, 9vw, 125px);
+    line-height: .82;
+    letter-spacing: -6px;
+    color: var(--deep);
+}
+
+.intro h1 em {
+    display: block;
+    font-family: "Italianno", cursive;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--red);
+    font-size: clamp(72px, 10vw, 145px);
+    letter-spacing: 0;
+    line-height: .8;
+    margin-left: 11vw;
+    margin-top: 8px;
+}
+
+.intro-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 38px;
+    gap: 30px;
+}
+
+.intro-description {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.intro-side {
+    text-align: right;
+    font-family: "Italianno", cursive;
+    font-size: 34px;
+    color: var(--red);
+    white-space: nowrap;
+}
+
+/* ---------------- DECORATIVE BOW ---------------- */
+
+.bow {
+    position: absolute;
+    right: 8vw;
+    top: 150px;
+    width: 95px;
+    height: 70px;
+    z-index: 1;
+    transform: rotate(8deg);
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    width: 48px;
+    height: 54px;
+    background: linear-gradient(145deg, #c92b43, #821225);
+    border: 2px solid #70101f;
+}
+
+.bow-left {
+    left: 0;
+    top: 4px;
+    border-radius: 70% 20% 70% 25%;
+    transform: rotate(18deg);
+}
+
+.bow-right {
+    right: 0;
+    top: 4px;
+    border-radius: 20% 70% 25% 70%;
+    transform: rotate(-18deg);
+}
+
+.bow-center {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #9f172d;
+    border: 2px solid #70101f;
+    left: 35px;
+    top: 25px;
+    z-index: 2;
+}
+
+.bow-tail-left,
+.bow-tail-right {
+    position: absolute;
+    width: 24px;
+    height: 47px;
+    background: #92152a;
+    top: 40px;
+    border: 2px solid #70101f;
+}
+
+.bow-tail-left {
+    left: 27px;
+    transform: rotate(16deg);
+    clip-path: polygon(0 0, 100% 8%, 70% 100%, 0 82%);
+}
+
+.bow-tail-right {
+    right: 27px;
+    transform: rotate(-16deg);
+    clip-path: polygon(0 8%, 100% 0, 100% 82%, 30% 100%);
+}
+
+/* ---------------- SECTION HEADING ---------------- */
+
+.section-heading {
+    max-width: 1250px;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.section-heading span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+}
+
+.section-heading::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+}
+
+/* ---------------- ENVELOPES ---------------- */
+
+.envelope-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 3;
+}
+
+.envelope {
+    position: relative;
+    height: 285px;
+    cursor: pointer;
+    transition: transform .35s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-9px) rotate(-.5deg);
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #e8d5c7;
+    border: 2px solid var(--deep);
+    box-shadow: 8px 9px 0 rgba(113, 19, 33, .08);
+}
+
+.envelope-front {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70%;
+    background: var(--paper);
+    border: 2px solid var(--deep);
+    z-index: 2;
+    clip-path: polygon(0 0, 50% 42%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    height: 58%;
+    background: linear-gradient(145deg, #b82139, #831426);
+    clip-path: polygon(0 0, 100% 0, 50% 92%);
+    z-index: 4;
+}
+
+.envelope-inner {
+    position: absolute;
+    inset: 0;
+    background: #fff4e8;
+    clip-path: polygon(0 0, 50% 45%, 100% 0, 100% 20%, 50% 67%, 0 20%);
+    z-index: 3;
+}
+
+.seal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #f7e6d8;
+    border: 2px solid var(--deep);
+    border-radius: 50%;
+    left: 50%;
+    top: 65px;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Italianno", cursive;
+    font-size: 28px;
+    color: var(--red);
+    box-shadow: 0 4px 10px rgba(60, 0, 10, .16);
+}
+
+.envelope-text {
+    position: absolute;
+    z-index: 7;
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+    text-align: center;
+}
+
+.envelope-number {
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.envelope-title {
+    font-family: "Bodoni Moda", serif;
+    color: var(--deep);
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.envelope-hint {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---------------- BOTTOM ---------------- */
+
+.bottom {
+    max-width: 1250px;
+    margin: 65px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    z-index: 3;
+}
+
+.bottom-message {
+    font-family: "Italianno", cursive;
+    font-size: 37px;
+    color: var(--red);
+}
+
+.next-page {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    background: var(--deep);
+    color: #fff8ef;
+    padding: 16px 23px;
+    border: 2px solid var(--deep);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .3s ease;
+}
+
+.next-page:hover {
+    background: var(--red);
+    transform: translateY(-3px);
+}
+
+/* ---------------- LETTER READER ---------------- */
+
+.reader {
+    display: none;
+    max-width: 950px;
+    margin: 75px auto 0;
+    position: relative;
+    z-index: 20;
+}
+
+.reader.active {
+    display: block;
+}
+
+.letter-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.back-button {
+    background: transparent;
+    border: 2px solid var(--deep);
+    padding: 12px 18px;
+    color: var(--deep);
+    font-family: "DM Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 9px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.back-button:hover {
+    background: var(--deep);
+    color: white;
+}
+
+.reader-number {
+    font-family: "Bodoni Moda", serif;
+    color: var(--red);
+    font-size: 13px;
+}
+
+.letter-paper {
+    background: var(--paper);
+    border: 2px solid var(--deep);
+    padding: clamp(35px, 7vw, 85px);
+    position: relative;
+    box-shadow: 14px 14px 0 rgba(113, 19, 33, .09);
+    overflow: hidden;
+}
+
+.letter-paper::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(167, 25, 46, .12);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -100px;
+}
+
+.letter-paper::after {
+    content: "R";
+    position: absolute;
+    top: 28px;
+    right: 38px;
+    font-family: "Italianno", cursive;
+    font-size: 65px;
+    color: rgba(167, 25, 46, .2);
+}
+
+.letter-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.letter-kicker {
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 9px;
+    margin-bottom: 20px;
+}
+
+.letter-heading h2 {
+    font-family: "Bodoni Moda", serif;
+    color: var(--deep);
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: .95;
+    font-weight: 500;
+    max-width: 750px;
+    margin-bottom: 30px;
+}
+
+.salutation {
+    font-family: "Italianno", cursive;
+    color: var(--red);
+    font-size: 40px;
+    margin-bottom: 22px;
+}
+
+.letter-body {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.letter-body p {
+    color: #634848;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.signature {
+    margin-top: 38px;
+    font-family: "Italianno", cursive;
+    font-size: 39px;
+    color: var(--red);
+    line-height: 1.05;
+}
+
+.reader-bottom {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.another-letter {
+    color: var(--red);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+
+    .envelope-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bow {
+        right: 4vw;
+        top: 160px;
+        transform: scale(.8) rotate(8deg);
+    }
+
+    .intro-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .intro-side {
+        text-align: left;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .page {
+        padding: 28px 5vw 45px;
+    }
+
+    .intro {
+        margin-top: 60px;
+    }
+
+    .intro h1 {
+        letter-spacing: -3px;
+    }
+
+    .intro h1 em {
+        margin-left: 5vw;
+    }
+
+    .bow {
+        opacity: .7;
+        transform: scale(.65) rotate(8deg);
+        right: -5px;
+        top: 150px;
+    }
+
+    .envelope-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+    }
+
+    .envelope {
+        height: 275px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bottom-message {
+        font-size: 34px;
+    }
+
+    .letter-paper {
+        padding: 38px 25px;
+    }
+
+    .letter-paper::after {
+        right: 20px;
+    }
+
+    .letter-heading h2 {
+        font-size: 42px;
+    }
+
+    .reader-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-circle"></div>
+<div class="background-circle two"></div>
+<div class="background-line"></div>
+
+<div class="page">
+
+    <div class="topbar">
+        <div class="label">chapter five · letters</div>
+        <div class="page-no">05 / 11</div>
+    </div>
+
+    <div id="letterCollection">
+
+        <section class="intro">
+
+            <div class="bow">
+                <div class="bow-left"></div>
+                <div class="bow-right"></div>
+                <div class="bow-center"></div>
+                <div class="bow-tail-left"></div>
+                <div class="bow-tail-right"></div>
+            </div>
+
+            <div class="intro-small">a little something for my favourite girl</div>
+
+            <h1>
+                Open when...
+                <em>you need me.</em>
+            </h1>
+
+            <div class="intro-bottom">
+
+                <p class="intro-description">
+                    Six little letters, sealed away for six different
+                    versions of you. You don't have to open them all.
+                    Just choose the one you need and let me talk to you
+                    for a little while.
+                </p>
+
+                <div class="intro-side">
+                    choose your letter ♡
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="section-heading">
+            <span>pick one</span>
+        </div>
+
+        <section class="envelope-grid">
+
+            <div class="envelope" onclick="openLetter(1)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter one</div>
+                    <div class="envelope-title">
+                        when you're having<br>a bad day
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+
+            <div class="envelope" onclick="openLetter(2)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter two</div>
+                    <div class="envelope-title">
+                        when you forget<br>who you are
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+
+            <div class="envelope" onclick="openLetter(3)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter three</div>
+                    <div class="envelope-title">
+                        when something<br>amazing happens
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+
+            <div class="envelope" onclick="openLetter(4)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter four</div>
+                    <div class="envelope-title">
+                        when you<br>miss me
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+
+            <div class="envelope" onclick="openLetter(5)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter five</div>
+                    <div class="envelope-title">
+                        when you<br>feel alone
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+
+            <div class="envelope" onclick="openLetter(6)">
+                <div class="envelope-back"></div>
+                <div class="envelope-inner"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">R</div>
+
+                <div class="envelope-text">
+                    <div class="envelope-number">letter six</div>
+                    <div class="envelope-title">
+                        when you just<br>need to be loved
+                    </div>
+                    <div class="envelope-hint">open me →</div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="bottom">
+
+            <div class="bottom-message">
+                keep these somewhere safe, baby.
+            </div>
+
+            <a href="six.html" class="next-page">
+                continue to chapter six
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="reader" id="reader">
+
+        <div class="letter-top">
+
+            <button class="back-button" onclick="closeLetter()">
+                ← back to all letters
+            </button>
+
+            <div class="reader-number" id="readerNumber">
+                01
+            </div>
+
+        </div>
+
+        <div class="letter-paper">
+
+            <div class="letter-heading">
+
+                <div class="letter-kicker">
+                    a letter for rose
+                </div>
+
+                <h2 id="letterTitle"></h2>
+
+            </div>
+
+            <div class="salutation" id="letterSalutation"></div>
+
+            <div class="letter-body" id="letterBody"></div>
+
+            <div class="signature">
+                always,<br>
+                your person ♡
+            </div>
+
+        </div>
+
+        <div class="reader-bottom">
+
+            <div class="another-letter">
+                finished this one? go back and choose another.
+            </div>
+
+            <button class="back-button" onclick="closeLetter()">
+                choose another letter
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <script>
+
+const letters = {
+
+    1: {
+        number: "01",
+        title: "When you're having a bad day.",
+        salutation: "Hey, baby.",
+        body: `
+            <p>
+                Come here for a second.
+            </p>
+
+            <p>
+                I know I can't magically erase whatever happened today.
+                I wish I could, but unfortunately I haven't unlocked
+                that particular superpower yet.
+            </p>
+
+            <p>
+                So instead, I'm going to remind you of something:
+                you don't have to pretend that you're okay with me.
+            </p>
+
+            <p>
+                If today was horrible, then it was horrible.
+                If you're tired, you're tired.
+                If you want to complain about the same thing seventeen
+                times, I will listen to it seventeen times.
+            </p>
+
+            <p>
+                You don't have to make your feelings smaller just because
+                someone else might not understand them.
+            </p>
+
+            <p>
+                And please remember that one bad day doesn't get to
+                decide what tomorrow will look like.
+            </p>
+
+            <p>
+                So breathe, get comfortable and let today be today.
+                Tomorrow gets another chance.
+            </p>
+
+            <p>
+                And if you ever need to say,
+                "I had the worst day ever,"
+                you already know where to come.
+            </p>
+        `
+    },
+
+
+    2: {
+        number: "02",
+        title: "When you forget who you are.",
+        salutation: "Rose, listen to me.",
+        body: `
+            <p>
+                Please remember yourself the way I remember you.
+            </p>
+
+            <p>
+                Not only on your best days.
+                Not only when you're happy, confident, productive
+                or making everyone around you laugh.
+            </p>
+
+            <p>
+                I mean you.
+                The real you.
+                Even on the quiet days.
+                Even on the insecure days.
+                Even on the days when you don't particularly like yourself.
+            </p>
+
+            <p>
+                You are still the girl who listens.
+                The girl who understands.
+                The girl who remembers little things.
+                The girl who somehow makes people feel like they can
+                actually be themselves.
+            </p>
+
+            <p>
+                You deserve the same kindness that you give to everyone else.
+            </p>
+
+            <p>
+                So if you ever forget who you are,
+                borrow my memory for a while.
+            </p>
+
+            <p>
+                I'll remember for you until you can remember again.
+            </p>
+        `
+    },
+
+
+    3: {
+        number: "03",
+        title: "When something amazing happens.",
+        salutation: "WAIT.",
+        body: `
+            <p>
+                You have news?!
+            </p>
+
+            <p>
+                Okay, first of all, tell me everything.
+                Immediately.
+            </p>
+
+            <p>
+                You know what I love?
+                The fact that whenever something happens,
+                one of my first thoughts is basically:
+                "Okay. Let me go tell Rose."
+            </p>
+
+            <p>
+                It doesn't even have to be something huge.
+                It can be the smallest, most random thing.
+            </p>
+
+            <p>
+                A funny conversation.
+                A ridiculous thought.
+                Something exciting.
+                Something embarrassing.
+                Something that nobody else would understand why
+                you're excited about.
+            </p>
+
+            <p>
+                I still want to hear it.
+            </p>
+
+            <p>
+                Your excitement is never too much for me.
+                So go on.
+                Tell me.
+                I'm listening.
+            </p>
+
+            <p>
+                And yes, I will probably get excited with you.
+                That's literally the job.
+            </p>
+        `
+    },
+
+
+    4: {
+        number: "04",
+        title: "When you miss me.",
+        salutation: "Hi, idiot.",
+        body: `
+            <p>
+                If you miss me, then congratulations —
+                the feeling is mutual.
+            </p>
+
+            <p>
+                Sometimes I think it's the ordinary moments that make
+                people miss each other the most.
+            </p>
+
+            <p>
+                A random conversation.
+                A stupid joke.
+                Something you see and immediately think,
+                "Rose would understand this."
+            </p>
+
+            <p>
+                It doesn't always need to be some huge emotional moment.
+                Sometimes I just miss talking to you.
+            </p>
+
+            <p>
+                I miss the random things.
+                The nonsense.
+                The little updates.
+                The conversations that somehow start with one topic
+                and end somewhere completely different.
+            </p>
+
+            <p>
+                So if you're reading this because you miss me,
+                just know that somewhere on my side of the screen,
+                there is a person who misses you too.
+            </p>
+
+            <p>
+                And yes.
+                I miss you too, idiot.
+            </p>
+        `
+    },
+
+
+    5: {
+        number: "05",
+        title: "When you feel alone.",
+        salutation: "Hey, my baby.",
+        body: `
+            <p>
+                You don't have to be okay just because nobody else
+                is around.
+            </p>
+
+            <p>
+                Sometimes loneliness isn't about literally being alone.
+                Sometimes it's about feeling like nobody would understand
+                if you tried to explain what is going on inside your head.
+            </p>
+
+            <p>
+                So you don't have to explain it perfectly to me.
+            </p>
+
+            <p>
+                You can come with the unfinished sentence.
+                You can come with the "I don't know what's wrong."
+                You can come with absolutely nothing to say.
+            </p>
+
+            <p>
+                You don't have to make yourself easy to understand
+                before you deserve to be heard.
+            </p>
+
+            <p>
+                You are not difficult to love.
+                You are not too much.
+                You are not a burden because you need someone.
+            </p>
+
+            <p>
+                And even if I can't physically be there beside you,
+                I hope you remember that there is someone who wants
+                to hear you.
+            </p>
+
+            <p>
+                Always.
+            </p>
+        `
+    },
+
+
+    6: {
+        number: "06",
+        title: "When you just need to be loved.",
+        salutation: "My darling Rose.",
+        body: `
+            <p>
+                There is no special reason for this letter.
+            </p>
+
+            <p>
+                That's the reason.
+            </p>
+
+            <p>
+                You don't have to accomplish something first.
+                You don't have to be funny.
+                You don't have to make everyone happy.
+                You don't have to have the perfect words.
+            </p>
+
+            <p>
+                You can simply exist.
+            </p>
+
+            <p>
+                And somehow, somewhere along the way,
+                you became one of those people I never want to lose.
+            </p>
+
+            <p>
+                You became the person I want to tell things to.
+                The person I want to brag to.
+                The person I can talk to without rehearsing every
+                sentence in my head first.
+            </p>
+
+            <p>
+                You became home without ever asking to.
+            </p>
+
+            <p>
+                So on your birthday, I want you to know something
+                very simple:
+                I am very, very glad you exist.
+            </p>
+
+            <p>
+                Happy birthday, my baby.
+                My darling.
+                My everything.
+            </p>
+
+            <p>
+                You are loved more than this tiny letter could ever fit.
+            </p>
+        `
+    }
+
+};
+
+
+function openLetter(number) {
+
+    const letter = letters[number];
+
+    document.getElementById("letterCollection").style.display = "none";
+
+    document.getElementById("reader").classList.add("active");
+
+    document.getElementById("readerNumber").textContent = letter.number;
+
+    document.getElementById("letterTitle").textContent = letter.title;
+
+    document.getElementById("letterSalutation").textContent =
+        letter.salutation;
+
+    document.getElementById("letterBody").innerHTML =
+        letter.body;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function closeLetter() {
+
+    document.getElementById("reader").classList.remove("active");
+
+    document.getElementById("letterCollection").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>

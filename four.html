@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Things I Adore About You</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,900&family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --cream: #f7efe4;
+      --paper: #fffaf3;
+      --red: #c8102e;
+      --bright: #ed1739;
+      --deep: #700718;
+      --wine: #4b0612;
+      --dark: #270208;
+      --text: #27171a;
+      --muted: #806166;
+      --soft-red: #f4d9d8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 8% 18%,
+          rgba(200,16,46,.09),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 92% 80%,
+          rgba(112,7,24,.08),
+          transparent 30%
+        ),
+        var(--cream);
+
+      color: var(--text);
+
+      font-family: "DM Sans", sans-serif;
+
+      overflow-x: hidden;
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+      width: calc(100% - 28px);
+      min-height: calc(100vh - 28px);
+
+      margin: 14px auto;
+
+      background: var(--paper);
+
+      border: 2px solid var(--wine);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      height: 70px;
+
+      border-bottom: 2px solid var(--wine);
+
+      padding: 0 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .2em;
+
+      color: var(--wine);
+    }
+
+    header span:last-child {
+      color: var(--red);
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+
+      min-height: 850px;
+
+      position: relative;
+
+      padding: 72px 7vw 90px;
+
+    }
+
+
+    /* =========================
+       GIANT BACKGROUND HEART
+    ========================= */
+
+    .background-heart {
+
+      position: absolute;
+
+      right: -100px;
+      top: 20px;
+
+      width: 550px;
+      height: 550px;
+
+      opacity: .045;
+
+      transform: rotate(-12deg);
+
+      z-index: 0;
+    }
+
+    .background-heart::before,
+    .background-heart::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 290px;
+      height: 450px;
+
+      background: var(--red);
+
+      border-radius: 290px 290px 0 0;
+    }
+
+    .background-heart::before {
+
+      left: 125px;
+
+      transform: rotate(-45deg);
+
+      transform-origin: 0 100%;
+    }
+
+    .background-heart::after {
+
+      right: 125px;
+
+      transform: rotate(45deg);
+
+      transform-origin: 100% 100%;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+
+      position: relative;
+
+      z-index: 4;
+
+      max-width: 680px;
+    }
+
+    .eyebrow {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: var(--red);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .27em;
+
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 42px;
+      height: 2px;
+
+      background: var(--red);
+    }
+
+
+    h1 {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: clamp(56px, 8vw, 112px);
+
+      line-height: .82;
+
+      letter-spacing: -.07em;
+
+      font-weight: 700;
+
+      color: var(--wine);
+    }
+
+    h1 em {
+
+      display: block;
+
+      margin-left: 75px;
+
+      margin-top: 9px;
+
+      color: var(--red);
+
+      font-style: italic;
+    }
+
+
+    .intro-text {
+
+      max-width: 580px;
+
+      margin-top: 35px;
+
+      font-size: 14px;
+
+      line-height: 1.95;
+
+      color: var(--muted);
+    }
+
+    .intro-text strong {
+      color: var(--wine);
+    }
+
+
+    /* =========================
+       QUOTE CARD
+    ========================= */
+
+    .quote {
+
+      position: absolute;
+
+      top: 95px;
+      right: 6vw;
+
+      width: 310px;
+
+      padding: 35px 34px 38px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--bright),
+          var(--red) 55%,
+          var(--deep)
+        );
+
+      color: var(--paper);
+
+      border: 2px solid var(--wine);
+
+      box-shadow:
+        10px 12px 0 rgba(75,6,18,.15),
+        inset -12px -18px 30px rgba(40,0,8,.22);
+
+      transform: rotate(3deg);
+
+      z-index: 5;
+    }
+
+    .quote::before {
+
+      content: "“";
+
+      position: absolute;
+
+      top: -25px;
+      left: 20px;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 105px;
+
+      line-height: 1;
+
+      color: rgba(255,255,255,.2);
+    }
+
+    .quote p {
+
+      position: relative;
+
+      z-index: 2;
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 28px;
+
+      line-height: 1.22;
+
+      font-style: italic;
+    }
+
+    .quote small {
+
+      display: block;
+
+      margin-top: 25px;
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .25em;
+
+      font-weight: 700;
+
+      opacity: .85;
+    }
+
+
+    /* =========================
+       ADORATION GRID
+    ========================= */
+
+    .adore-grid {
+
+      position: relative;
+
+      z-index: 6;
+
+      margin-top: 72px;
+
+      max-width: 900px;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 15px;
+    }
+
+
+    .card {
+
+      min-height: 190px;
+
+      padding: 28px 27px;
+
+      background: var(--paper);
+
+      border: 2px solid var(--wine);
+
+      box-shadow:
+        6px 7px 0 rgba(75,6,18,.12);
+
+      position: relative;
+
+      transition: .25s ease;
+    }
+
+    .card:hover {
+
+      transform: translateY(-6px);
+
+      box-shadow:
+        9px 12px 0 rgba(75,6,18,.17);
+    }
+
+
+    .card:nth-child(2) {
+      background: #fff5ef;
+    }
+
+    .card:nth-child(3) {
+      background: #fff9f1;
+    }
+
+    .card:nth-child(4) {
+      background: #fdf0ed;
+    }
+
+
+    .number {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 34px;
+
+      line-height: 1;
+
+      color: var(--red);
+
+      font-weight: 600;
+
+      margin-bottom: 16px;
+    }
+
+
+    .card h2 {
+
+      font-family: "Bodoni Moda", serif;
+
+      color: var(--wine);
+
+      font-size: 25px;
+
+      line-height: 1.05;
+
+      margin-bottom: 12px;
+    }
+
+
+    .card p {
+
+      color: var(--muted);
+
+      font-size: 11.5px;
+
+      line-height: 1.75;
+
+      max-width: 340px;
+    }
+
+
+    /* =========================
+       SPECIAL CARD
+    ========================= */
+
+    .special {
+
+      grid-column: span 2;
+
+      min-height: 215px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fffaf3,
+          #f9e7e3
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      padding: 35px 42px;
+
+      overflow: hidden;
+    }
+
+    .special-text {
+
+      max-width: 570px;
+    }
+
+    .special .number {
+      margin-bottom: 12px;
+    }
+
+    .special h2 {
+
+      font-family: "Bodoni Moda", serif;
+
+      color: var(--wine);
+
+      font-size: clamp(28px, 4vw, 43px);
+
+      line-height: 1;
+
+      margin-bottom: 14px;
+    }
+
+    .special p {
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       HEART ORNAMENT
+    ========================= */
+
+    .heart {
+
+      width: 125px;
+      height: 125px;
+
+      position: relative;
+
+      flex-shrink: 0;
+
+      transform: rotate(-45deg);
+
+      background: var(--red);
+
+      border: 2px solid var(--wine);
+
+      box-shadow:
+        inset -12px -14px 22px rgba(55,0,9,.22),
+        8px 10px 0 rgba(75,6,18,.12);
+    }
+
+    .heart::before,
+    .heart::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 125px;
+      height: 125px;
+
+      border-radius: 50%;
+
+      background: var(--red);
+
+      border: 2px solid var(--wine);
+    }
+
+    .heart::before {
+      top: -63px;
+      left: -2px;
+    }
+
+    .heart::after {
+      left: 61px;
+      top: 0;
+    }
+
+    .heart-text {
+
+      position: absolute;
+
+      z-index: 5;
+
+      width: 125px;
+      height: 125px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transform: rotate(45deg);
+
+      color: var(--paper);
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 17px;
+
+      font-style: italic;
+
+      text-align: center;
+
+      line-height: 1.1;
+    }
+
+
+    /* =========================
+       SPARKLES
+    ========================= */
+
+    .spark {
+
+      position: absolute;
+
+      color: var(--red);
+
+      font-family: "Bodoni Moda", serif;
+
+      z-index: 10;
+    }
+
+    .spark.one {
+      top: 88px;
+      right: 37%;
+      font-size: 34px;
+    }
+
+    .spark.two {
+      right: 4%;
+      bottom: 200px;
+      font-size: 28px;
+    }
+
+    .spark.three {
+      left: 4%;
+      bottom: 300px;
+      font-size: 22px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      min-height: 85px;
+
+      border-top: 2px solid var(--wine);
+
+      padding: 17px 32px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    footer p {
+
+      font-family: "Bodoni Moda", serif;
+
+      font-size: 14px;
+
+      font-style: italic;
+
+      color: var(--muted);
+    }
+
+    .next {
+
+      text-decoration: none;
+
+      color: var(--paper);
+
+      background: var(--red);
+
+      border: 2px solid var(--wine);
+
+      padding: 14px 22px;
+
+      box-shadow: 5px 5px 0 var(--wine);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .16em;
+
+      transition: .2s ease;
+    }
+
+    .next:hover {
+
+      background: var(--bright);
+
+      transform: translate(3px,3px);
+
+      box-shadow: 2px 2px 0 var(--wine);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width: 850px) {
+
+      .page {
+        width: calc(100% - 18px);
+        margin: 9px auto;
+      }
+
+      header {
+        padding: 0 20px;
+      }
+
+      main {
+
+        min-height: 1350px;
+
+        padding:
+          50px
+          25px
+          90px;
+      }
+
+      h1 {
+        font-size: 67px;
+      }
+
+      h1 em {
+        margin-left: 35px;
+      }
+
+      .quote {
+
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 90%;
+
+        margin:
+          50px
+          0
+          0
+          auto;
+      }
+
+      .adore-grid {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 55px;
+      }
+
+      .special {
+        grid-column: span 1;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+      }
+
+      .heart {
+        align-self: flex-end;
+
+        transform: scale(.75) rotate(-45deg);
+
+        margin-top: -15px;
+        margin-right: 15px;
+      }
+
+      .spark.one {
+        right: 10%;
+        top: 60px;
+      }
+
+      .background-heart {
+        right: -250px;
+      }
+
+      footer {
+        padding: 17px 20px;
+        justify-content: flex-end;
+      }
+
+      footer p {
+        display: none;
+      }
+    }
+
+
+    @media(max-width: 480px) {
+
+      main {
+        min-height: 1400px;
+      }
+
+      h1 {
+        font-size: 57px;
+      }
+
+      .intro-text {
+        font-size: 13px;
+      }
+
+      .quote {
+        width: 94%;
+      }
+
+      .quote p {
+        font-size: 25px;
+      }
+
+      .card {
+        min-height: 175px;
+      }
+
+      .special h2 {
+        font-size: 31px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <header>
+      <span>chapter four · rose</span>
+      <span>things i adore</span>
+    </header>
+
+
+    <main>
+
+      <div class="background-heart"></div>
+
+
+      <span class="spark one">✦</span>
+      <span class="spark two">✦</span>
+      <span class="spark three">✧</span>
+
+
+      <section class="intro">
+
+        <div class="eyebrow">
+          if i had to explain you
+        </div>
+
+        <h1>
+          Things I
+          <em>adore about you.</em>
+        </h1>
+
+        <p class="intro-text">
+          I don't think I could ever make a proper list.
+          There are too many little things.
+          The way you understand me.
+          The way I can tell you absolutely anything without
+          stopping to wonder if you'll judge me.
+          <br><br>
+          And perhaps my favourite thing is this:
+          whenever something happens — something funny,
+          exciting, stupid, terrible, amazing —
+          my first thought is somehow always
+          <strong>“I need to tell Rose.”</strong>
+        </p>
+
+      </section>
+
+
+      <div class="quote">
+
+        <p>
+          You are one of the very few people
+          I never have to rehearse myself for.
+        </p>
+
+        <small>
+          and that means more than you know
+        </small>
+
+      </div>
+
+
+      <section class="adore-grid">
+
+
+        <article class="card">
+
+          <div class="number">01</div>
+
+          <h2>
+            You understand me.
+          </h2>
+
+          <p>
+            Not just the things I say out loud.
+            Somehow, you understand the things behind them too.
+            I never feel like I have to translate myself for you.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="number">02</div>
+
+          <h2>
+            I can be completely me.
+          </h2>
+
+          <p>
+            I can ramble, brag, complain, overshare,
+            say something completely ridiculous and then
+            immediately tell you something serious.
+            There is no careful version of me required.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="number">03</div>
+
+          <h2>
+            You feel safe.
+          </h2>
+
+          <p>
+            There are things I don't tell everyone.
+            Things I keep tucked away because I don't know
+            how they'll be received. With you, I somehow
+            want to open that little locked door.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="number">04</div>
+
+          <h2>
+            You are my first thought.
+          </h2>
+
+          <p>
+            Something happens and before I even realise it,
+            my brain is already going:
+            “Wait. I have to tell Rose this.”
+            That probably says everything.
+          </p>
+
+        </article>
+
+
+        <article class="special">
+
+          <div class="special-text">
+
+            <div class="number">
+              05 · the biggest one
+            </div>
+
+            <h2>
+              You make being understood
+              feel effortless.
+            </h2>
+
+            <p>
+              And I don't think you realise how rare that is.
+              To have someone you can talk to without measuring
+              every sentence. Someone who can hear the messy,
+              unfiltered version and still stay.
+              Someone who makes you think,
+              “Oh. I can tell her this.”
+              <br><br>
+              That's one of the most precious things
+              you've ever given me.
+            </p>
+
+          </div>
+
+
+          <div class="heart">
+            <div class="heart-text">
+              my<br>
+              safe<br>
+              person
+            </div>
+          </div>
+
+        </article>
+
+
+      </section>
+
+
+    </main>
+
+
+    <footer>
+
+      <p>
+        some people are loved loudly. some are loved quietly.
+        you are loved in every little way.
+      </p>
+
+      <a href="five.html" class="next">
+        keep going →
+      </a>
+
+    </footer>
+
+
+  </div>
+
+</body>
+</html>

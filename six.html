@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little World Called Rose</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap');
+
+:root {
+    --cream: #f8f1e7;
+    --paper: #fffaf4;
+    --red: #a7192e;
+    --bright: #c52b43;
+    --deep: #711321;
+    --dark: #391016;
+    --muted: #795b5c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 480px;
+    height: 480px;
+    border: 1px solid rgba(167, 25, 46, .12);
+    border-radius: 50%;
+    top: -260px;
+    right: -180px;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(167, 25, 46, .09);
+    border-radius: 50%;
+    bottom: -200px;
+    left: -150px;
+    pointer-events: none;
+}
+
+.page {
+    min-height: 100vh;
+    padding: 32px 6vw 65px;
+    position: relative;
+}
+
+/* TOP */
+
+.topbar {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.label {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.number {
+    color: var(--deep);
+    font-family: "Bodoni Moda", serif;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1250px;
+    margin: 75px auto 0;
+    position: relative;
+    min-height: 600px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 5;
+    padding-top: 35px;
+}
+
+.kicker {
+    color: var(--red);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 500;
+    font-size: clamp(58px, 10vw, 135px);
+    line-height: .82;
+    letter-spacing: -6px;
+    color: var(--deep);
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red);
+    font-family: "Italianno", cursive;
+    font-size: clamp(85px, 13vw, 175px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: .7;
+    margin-left: 12vw;
+    margin-top: 8px;
+}
+
+.hero-quote {
+    margin-top: 42px;
+    max-width: 450px;
+    font-family: "Italianno", cursive;
+    color: var(--red);
+    font-size: 35px;
+    line-height: 1.1;
+}
+
+/* ROSE STAGE */
+
+.rose-stage {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    right: 2vw;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GLOW */
+
+.rose-glow {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: rgba(167, 25, 46, .08);
+    filter: blur(25px);
+}
+
+/* CSS ROSE */
+
+.rose {
+    position: relative;
+    width: 255px;
+    height: 255px;
+    transition: transform .7s ease;
+    filter: drop-shadow(10px 15px 18px rgba(82, 8, 20, .18));
+}
+
+.rose:hover {
+    transform: scale(1.07) rotate(3deg);
+}
+
+.petal {
+    position: absolute;
+    background: linear-gradient(145deg, #d63b52 0%, #a7192e 55%, #69101e 100%);
+    border: 2px solid #70101f;
+    box-shadow:
+        inset 8px 8px 14px rgba(255,255,255,.12),
+        inset -8px -10px 15px rgba(50,0,8,.16);
+}
+
+.petal.one {
+    width: 125px;
+    height: 155px;
+    left: 65px;
+    top: 15px;
+    border-radius: 75% 30% 65% 35%;
+    transform: rotate(8deg);
+}
+
+.petal.two {
+    width: 125px;
+    height: 155px;
+    left: 45px;
+    top: 55px;
+    border-radius: 30% 75% 35% 65%;
+    transform: rotate(-35deg);
+}
+
+.petal.three {
+    width: 125px;
+    height: 155px;
+    left: 90px;
+    top: 55px;
+    border-radius: 75% 30% 65% 35%;
+    transform: rotate(42deg);
+}
+
+.petal.four {
+    width: 125px;
+    height: 155px;
+    left: 30px;
+    top: 100px;
+    border-radius: 75% 30% 65% 35%;
+    transform: rotate(-65deg);
+}
+
+.petal.five {
+    width: 125px;
+    height: 155px;
+    left: 105px;
+    top: 100px;
+    border-radius: 30% 75% 35% 65%;
+    transform: rotate(70deg);
+}
+
+.petal.six {
+    width: 105px;
+    height: 125px;
+    left: 78px;
+    top: 105px;
+    border-radius: 50% 50% 40% 60%;
+    transform: rotate(15deg);
+    background: linear-gradient(145deg, #c62b43, #761122);
+}
+
+.rose-center {
+    position: absolute;
+    width: 65px;
+    height: 75px;
+    border-radius: 45% 55% 45% 55%;
+    left: 96px;
+    top: 95px;
+    background: linear-gradient(145deg, #e14a5e, #811325);
+    border: 2px solid #650d1c;
+    z-index: 5;
+    transform: rotate(-15deg);
+}
+
+.rose-center::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 48px;
+    border-left: 3px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    left: 18px;
+    top: 12px;
+    transform: rotate(25deg);
+}
+
+/* STEM */
+
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 170px;
+    background: #52632e;
+    left: 124px;
+    top: 235px;
+    transform: rotate(5deg);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.leaf {
+    position: absolute;
+    width: 85px;
+    height: 42px;
+    background: #68783b;
+    border: 2px solid #445326;
+    border-radius: 100% 0 100% 0;
+    left: 65px;
+    top: 330px;
+    transform: rotate(-27deg);
+}
+
+.leaf.two {
+    left: 120px;
+    top: 375px;
+    transform: rotate(28deg) scale(.85);
+}
+
+/* FLOATING WORDS */
+
+.word {
+    position: absolute;
+    font-family: "Bodoni Moda", serif;
+    font-size: 13px;
+    color: var(--deep);
+    letter-spacing: 1px;
+    transition: .35s ease;
+    cursor: default;
+}
+
+.word:hover {
+    color: var(--red);
+    transform: scale(1.12);
+}
+
+.word.one {
+    top: 45px;
+    left: 5%;
+}
+
+.word.two {
+    top: 145px;
+    right: 1%;
+}
+
+.word.three {
+    top: 300px;
+    left: 0;
+}
+
+.word.four {
+    bottom: 90px;
+    right: 5%;
+}
+
+.word.five {
+    bottom: 20px;
+    left: 18%;
+}
+
+.word.six {
+    top: 75px;
+    right: 29%;
+}
+
+.word.seven {
+    bottom: 55px;
+    right: 31%;
+}
+
+.word.eight {
+    top: 380px;
+    left: 12%;
+}
+
+/* DECORATIVE PETALS */
+
+.floating-petal {
+    position: absolute;
+    width: 14px;
+    height: 23px;
+    border-radius: 80% 20% 80% 20%;
+    background: var(--red);
+    opacity: .65;
+    animation: float 5s ease-in-out infinite;
+}
+
+.fp1 {
+    top: 130px;
+    right: 32%;
+    transform: rotate(35deg);
+}
+
+.fp2 {
+    top: 410px;
+    right: 2%;
+    transform: rotate(-35deg);
+    animation-delay: 1s;
+}
+
+.fp3 {
+    top: 480px;
+    left: 5%;
+    transform: rotate(55deg);
+    animation-delay: 2s;
+}
+
+.fp4 {
+    top: 215px;
+    left: 40%;
+    transform: rotate(-20deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(35deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(50deg);
+    }
+}
+
+/* LOWER SECTION */
+
+.lower {
+    max-width: 1000px;
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 5;
+}
+
+.statement {
+    background: var(--red);
+    color: #fff8f0;
+    padding: 55px clamp(30px, 6vw, 80px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 12px 12px 0 rgba(113,19,33,.1);
+}
+
+.statement::before {
+    content: "ROSE";
+    position: absolute;
+    right: -30px;
+    bottom: -50px;
+    font-family: "Bodoni Moda", serif;
+    font-size: 170px;
+    font-weight: 600;
+    color: rgba(255,255,255,.07);
+    letter-spacing: -10px;
+}
+
+.statement-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: .8;
+    margin-bottom: 20px;
+}
+
+.statement h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(28px, 5vw, 52px);
+    line-height: 1.05;
+    font-weight: 500;
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.statement p {
+    max-width: 720px;
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255,248,240,.9);
+    position: relative;
+    z-index: 2;
+}
+
+.little-quote {
+    text-align: center;
+    margin: 70px auto 45px;
+    max-width: 750px;
+}
+
+.little-quote p {
+    font-family: "Italianno", cursive;
+    font-size: 40px;
+    line-height: 1.15;
+    color: var(--red);
+}
+
+.definition {
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(113,19,33,.25);
+    border-bottom: 1px solid rgba(113,19,33,.25);
+    padding: 28px 0;
+    text-align: center;
+}
+
+.definition-name {
+    font-family: "Bodoni Moda", serif;
+    font-size: 28px;
+    color: var(--deep);
+    margin-bottom: 5px;
+}
+
+.definition-type {
+    color: var(--red);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.definition p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+.footer {
+    max-width: 1250px;
+    margin: 70px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-note {
+    font-family: "Italianno", cursive;
+    font-size: 34px;
+    color: var(--red);
+}
+
+.next {
+    display: inline-flex;
+    align-items: center;
+    gap: 17px;
+    padding: 15px 24px;
+    background: var(--deep);
+    border: 2px solid var(--deep);
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.next:hover {
+    background: var(--red);
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .rose-stage {
+        right: 50%;
+        transform: translateX(50%);
+        top: 360px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero h1 span {
+        margin-left: 0;
+    }
+
+    .hero-quote {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .word.one {
+        left: 4%;
+    }
+
+    .word.three {
+        left: 4%;
+    }
+
+    .word.eight {
+        left: 8%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 27px 5vw 50px;
+    }
+
+    .hero {
+        margin-top: 55px;
+        min-height: 720px;
+    }
+
+    .hero h1 {
+        font-size: 59px;
+        letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+        font-size: 92px;
+    }
+
+    .hero-quote {
+        font-size: 31px;
+        margin-top: 30px;
+    }
+
+    .rose-stage {
+        width: 340px;
+        height: 340px;
+        top: 350px;
+    }
+
+    .rose {
+        transform: scale(.78);
+    }
+
+    .rose:hover {
+        transform: scale(.83) rotate(3deg);
+    }
+
+    .word {
+        font-size: 10px;
+    }
+
+    .word.six {
+        right: 12%;
+    }
+
+    .word.seven {
+        right: 13%;
+    }
+
+    .statement {
+        padding: 40px 28px;
+    }
+
+    .statement::before {
+        font-size: 100px;
+    }
+
+    .little-quote p {
+        font-size: 34px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="topbar">
+        <div class="label">chapter six · rose</div>
+        <div class="number">06 / 11</div>
+    </div>
+
+    <section class="hero">
+
+        <div class="hero-copy">
+
+            <div class="kicker">for the girl behind the name</div>
+
+            <h1>
+                A little world
+                <span>called Rose.</span>
+            </h1>
+
+            <div class="hero-quote">
+                Some people become memories.<br>
+                You became a place.
+            </div>
+
+        </div>
+
+        <div class="rose-stage">
+
+            <div class="rose-glow"></div>
+
+            <div class="rose">
+
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+                <div class="petal five"></div>
+                <div class="petal six"></div>
+
+                <div class="rose-center"></div>
+
+                <div class="stem"></div>
+                <div class="leaf"></div>
+                <div class="leaf two"></div>
+
+            </div>
+
+        </div>
+
+        <div class="word one">warmth</div>
+        <div class="word two">laughter</div>
+        <div class="word three">comfort</div>
+        <div class="word four">chaos</div>
+        <div class="word five">kindness</div>
+        <div class="word six">my person</div>
+        <div class="word seven">safe place</div>
+        <div class="word eight">my darling</div>
+
+        <div class="floating-petal fp1"></div>
+        <div class="floating-petal fp2"></div>
+        <div class="floating-petal fp3"></div>
+        <div class="floating-petal fp4"></div>
+
+    </section>
+
+    <section class="lower">
+
+        <div class="statement">
+
+            <div class="statement-label">
+                why this name feels right
+            </div>
+
+            <h2>
+                There is something about you, Rose.
+            </h2>
+
+            <p>
+                You somehow became part of my everyday life without
+                even trying. You're the person I want to tell things to,
+                the person I can be completely ridiculous with, the person
+                I can talk to without wondering whether I'm saying too much.
+            </p>
+
+            <p>
+                And I don't think you realise how special that is.
+            </p>
+
+            <p>
+                You aren't just someone I happened to meet.
+                You're someone whose presence slowly became familiar,
+                comforting, and important. Somewhere between all the
+                conversations, random updates, nonsense, laughter,
+                and everything in between, you became my Rose.
+            </p>
+
+            <p>
+                And honestly?
+                I wouldn't have it any other way.
+            </p>
+
+        </div>
+
+        <div class="little-quote">
+
+            <p>
+                If I had to put everything I love about you into one word,
+                I'd probably still need a thousand more.
+            </p>
+
+        </div>
+
+        <div class="definition">
+
+            <div class="definition-name">Rose</div>
+
+            <div class="definition-type">
+                noun · one of one
+            </div>
+
+            <p>
+                a girl who somehow manages to be soft and chaotic,
+                comforting and completely ridiculous, precious and
+                impossible to replace.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-note">
+            And this is only one little page...
+        </div>
+
+        <a href="seven.html" class="next">
+            chapter seven
+            <span>→</span>
+        </a>
+
+    </footer>
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4th October — For Rose</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================================
+           COLOUR PALETTE
+        ========================================= */
+
+        :root {
+
+            --ivory: #f5eee3;
+            --paper: #fbf7f0;
+
+            --cherry: #c91532;
+            --bright-cherry: #ed1738;
+            --dark-cherry: #700b1b;
+
+            --ink: #351015;
+            --muted-red: #8d4a52;
+
+            --shadow:
+                rgba(72, 5, 15, 0.18);
+        }
+
+
+        /* =========================================
+           BODY
+        ========================================= */
+
+        body {
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    #fffaf3 0%,
+                    var(--ivory) 58%,
+                    #eadfd1 100%
+                );
+
+            color: var(--ink);
+
+            font-family: "DM Sans", sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           PAGE WRAPPER
+        ========================================= */
+
+        .page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 32px;
+        }
+
+
+        /* =========================================
+           MAIN CARD
+        ========================================= */
+
+        .card {
+
+            width: 100%;
+
+            max-width: 1180px;
+
+            min-height: calc(100vh - 64px);
+
+            position: relative;
+
+            background: rgba(251, 247, 240, 0.72);
+
+            border: 2px solid var(--cherry);
+
+            box-shadow:
+                0 14px 45px var(--shadow);
+
+            overflow: hidden;
+        }
+
+
+        /* Inner border */
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 13px;
+
+            border: 1px solid rgba(201, 21, 50, 0.32);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================
+           TOP LABELS
+        ========================================= */
+
+        .top-left {
+
+            position: absolute;
+
+            top: 34px;
+
+            left: 40px;
+
+            z-index: 5;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: var(--dark-cherry);
+        }
+
+
+        .top-right {
+
+            position: absolute;
+
+            top: 34px;
+
+            right: 40px;
+
+            z-index: 5;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: var(--muted-red);
+        }
+
+
+        /* =========================================
+           CENTRAL CONTENT
+        ========================================= */
+
+        .content {
+
+            min-height: calc(100vh - 64px);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 115px 40px 110px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           SMALL INTRO
+        ========================================= */
+
+        .intro {
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 5px;
+
+            color: var(--dark-cherry);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================
+           DATE
+        ========================================= */
+
+        .date {
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(58px, 8vw, 98px);
+
+            font-weight: 600;
+
+            line-height: 1;
+
+            color: var(--cherry);
+
+            letter-spacing: -2px;
+
+            position: relative;
+
+            text-shadow:
+                2px 3px 0 rgba(112, 11, 27, 0.16);
+        }
+
+
+        /* Small shine */
+
+        .date::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 70px;
+
+            height: 7px;
+
+            background: rgba(255, 255, 255, 0.65);
+
+            border-radius: 50%;
+
+            left: 50%;
+
+            top: 22px;
+
+            transform: translateX(-50%) rotate(-8deg);
+
+            opacity: 0.65;
+
+            filter: blur(2px);
+        }
+
+
+        /* =========================================
+           MAIN SENTENCE
+        ========================================= */
+
+        .headline {
+
+            margin-top: 24px;
+
+            max-width: 720px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(31px, 4vw, 50px);
+
+            font-weight: 500;
+
+            line-height: 1.18;
+
+            color: var(--ink);
+        }
+
+
+        .headline em {
+
+            color: var(--cherry);
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           SUPPORTING TEXT
+        ========================================= */
+
+        .support {
+
+            max-width: 520px;
+
+            margin-top: 22px;
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: #69454a;
+        }
+
+
+        /* =========================================
+           DECORATIVE DIVIDER
+        ========================================= */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            margin-top: 32px;
+
+            color: var(--cherry);
+        }
+
+
+        .divider-line {
+
+            width: 65px;
+
+            height: 2px;
+
+            background: var(--cherry);
+        }
+
+
+        .divider-symbol {
+
+            font-size: 18px;
+
+            line-height: 1;
+        }
+
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .next {
+
+            margin-top: 34px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 14px 25px;
+
+            background: var(--cherry);
+
+            color: #fff8f1;
+
+            border: 2px solid var(--dark-cherry);
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 500;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            box-shadow:
+                0 6px 16px rgba(112, 11, 27, 0.18);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+
+        .next-arrow {
+
+            font-size: 17px;
+
+            line-height: 1;
+
+            transition: transform 0.25s ease;
+        }
+
+
+        .next:hover {
+
+            background: var(--bright-cherry);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 24px rgba(112, 11, 27, 0.25);
+        }
+
+
+        .next:hover .next-arrow {
+
+            transform: translateX(5px);
+        }
+
+
+        /* =========================================
+           RIBBON / BOW
+        ========================================= */
+
+        .bow {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 76px;
+
+            height: 54px;
+
+            background: var(--cherry);
+
+            z-index: 8;
+
+            box-shadow:
+                0 5px 15px rgba(112, 11, 27, 0.15);
+        }
+
+
+        .bow::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 53px;
+
+            height: 42px;
+
+            background: var(--dark-cherry);
+
+            left: -38px;
+
+            top: 4px;
+
+            clip-path: polygon(
+                0 0,
+                100% 8%,
+                82% 50%,
+                100% 92%,
+                0 100%,
+                20% 50%
+            );
+        }
+
+
+        .bow::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 53px;
+
+            height: 42px;
+
+            background: var(--dark-cherry);
+
+            right: -38px;
+
+            top: 4px;
+
+            clip-path: polygon(
+                0 8%,
+                100% 0,
+                80% 50%,
+                100% 100%,
+                0 92%,
+                18% 50%
+            );
+        }
+
+
+        .bow-center {
+
+            position: absolute;
+
+            width: 25px;
+
+            height: 25px;
+
+            left: 50%;
+
+            top: 15px;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background: var(--bright-cherry);
+
+            box-shadow:
+                inset 3px 3px 5px rgba(255,255,255,0.25);
+        }
+
+
+        /* =========================================
+           LIPSTICK MARKS
+        ========================================= */
+
+        .kiss {
+
+            position: absolute;
+
+            width: 48px;
+
+            height: 34px;
+
+            z-index: 4;
+
+            opacity: 0.82;
+        }
+
+
+        /*
+           Each kiss is built from several
+           CSS shapes. No image required.
+        */
+
+        .kiss::before,
+        .kiss::after {
+
+            content: "";
+
+            position: absolute;
+
+            background: var(--cherry);
+
+            box-shadow:
+                0 3px 4px rgba(112, 11, 27, 0.12);
+        }
+
+
+        .kiss::before {
+
+            width: 22px;
+
+            height: 14px;
+
+            border-radius:
+                70% 35% 60% 45%;
+
+            left: 3px;
+
+            top: 7px;
+
+            transform: rotate(18deg);
+        }
+
+
+        .kiss::after {
+
+            width: 22px;
+
+            height: 14px;
+
+            border-radius:
+                35% 70% 45% 60%;
+
+            right: 3px;
+
+            top: 7px;
+
+            transform: rotate(-18deg);
+        }
+
+
+        .kiss span {
+
+            position: absolute;
+
+            width: 30px;
+
+            height: 11px;
+
+            left: 9px;
+
+            bottom: 2px;
+
+            background: var(--cherry);
+
+            border-radius: 45% 45% 60% 60%;
+
+            transform: rotate(-2deg);
+        }
+
+
+        .kiss.one {
+
+            top: 17%;
+
+            left: 8%;
+
+            transform: rotate(-18deg) scale(1.25);
+        }
+
+
+        .kiss.two {
+
+            top: 23%;
+
+            right: 8%;
+
+            transform: rotate(14deg) scale(0.9);
+        }
+
+
+        .kiss.three {
+
+            bottom: 18%;
+
+            left: 11%;
+
+            transform: rotate(11deg) scale(0.75);
+        }
+
+
+        .kiss.four {
+
+            bottom: 16%;
+
+            right: 10%;
+
+            transform: rotate(-15deg) scale(1.1);
+        }
+
+
+        /* =========================================
+           SMALL RED STARS
+        ========================================= */
+
+        .star {
+
+            position: absolute;
+
+            color: var(--cherry);
+
+            font-size: 15px;
+
+            z-index: 3;
+        }
+
+
+        .star.one {
+
+            top: 27%;
+
+            left: 24%;
+        }
+
+
+        .star.two {
+
+            top: 30%;
+
+            right: 25%;
+        }
+
+
+        .star.three {
+
+            bottom: 27%;
+
+            left: 25%;
+        }
+
+
+        .star.four {
+
+            bottom: 28%;
+
+            right: 24%;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+
+            position: absolute;
+
+            bottom: 29px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: var(--muted-red);
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            z-index: 5;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .page {
+
+                padding: 14px;
+            }
+
+
+            .card {
+
+                min-height: calc(100vh - 28px);
+            }
+
+
+            .card::before {
+
+                inset: 9px;
+            }
+
+
+            .top-left,
+            .top-right {
+
+                top: 26px;
+
+                font-size: 7px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .top-left {
+
+                left: 23px;
+            }
+
+
+            .top-right {
+
+                right: 23px;
+            }
+
+
+            .content {
+
+                min-height: calc(100vh - 28px);
+
+                padding:
+                    105px 25px 90px;
+            }
+
+
+            .intro {
+
+                font-size: 8px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .date {
+
+                font-size: 65px;
+            }
+
+
+            .date::after {
+
+                width: 45px;
+
+                height: 5px;
+
+                top: 15px;
+            }
+
+
+            .headline {
+
+                margin-top: 20px;
+
+                font-size: 31px;
+
+                line-height: 1.2;
+            }
+
+
+            .headline em {
+
+                white-space: normal;
+            }
+
+
+            .support {
+
+                margin-top: 18px;
+
+                font-size: 12px;
+
+                line-height: 1.7;
+            }
+
+
+            .divider {
+
+                margin-top: 25px;
+            }
+
+
+            .divider-line {
+
+                width: 38px;
+            }
+
+
+            .next {
+
+                margin-top: 27px;
+
+                padding: 13px 20px;
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .kiss {
+
+                transform: scale(0.75);
+            }
+
+
+            .kiss.one {
+
+                left: 3%;
+
+                top: 17%;
+            }
+
+
+            .kiss.two {
+
+                right: 3%;
+
+                top: 23%;
+            }
+
+
+            .kiss.three {
+
+                left: 3%;
+
+                bottom: 18%;
+            }
+
+
+            .kiss.four {
+
+                right: 3%;
+
+                bottom: 16%;
+            }
+
+
+            .star {
+
+                display: none;
+            }
+
+
+            .footer {
+
+                bottom: 19px;
+
+                font-size: 6px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            .bow {
+
+                width: 62px;
+
+                height: 45px;
+            }
+
+
+            .bow::before,
+            .bow::after {
+
+                width: 43px;
+
+                height: 35px;
+            }
+
+
+            .bow::before {
+
+                left: -31px;
+            }
+
+
+            .bow::after {
+
+                right: -31px;
+            }
+
+
+            .bow-center {
+
+                width: 21px;
+
+                height: 21px;
+
+                top: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="page">
+
+        <section class="card">
+
+
+            <!-- TOP LABELS -->
+
+            <div class="top-left">
+                04 · 10 · 2026
+            </div>
+
+            <div class="top-right">
+                for rose
+            </div>
+
+
+            <!-- BOW -->
+
+            <div class="bow">
+                <div class="bow-center"></div>
+            </div>
+
+
+            <!-- LIPSTICK STAMPS -->
+
+            <div class="kiss one">
+                <span></span>
+            </div>
+
+            <div class="kiss two">
+                <span></span>
+            </div>
+
+            <div class="kiss three">
+                <span></span>
+            </div>
+
+            <div class="kiss four">
+                <span></span>
+            </div>
+
+
+            <!-- SMALL DECORATION -->
+
+            <div class="star one">✦</div>
+            <div class="star two">✦</div>
+            <div class="star three">✦</div>
+            <div class="star four">✦</div>
+
+
+            <!-- MAIN CONTENT -->
+
+            <div class="content">
+
+                <p class="intro">
+                    a very special day
+                </p>
+
+
+                <div class="date">
+                    4th October
+                </div>
+
+
+                <h1 class="headline">
+                    Because
+                    <em>someone very special</em>
+                    was born on this day.
+                </h1>
+
+
+                <p class="support">
+                    And somehow, the world became a little more
+                    beautiful, a little more interesting, and a lot
+                    more precious because of it.
+                </p>
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+
+                    <div class="divider-line"></div>
+
+                    <div class="divider-symbol">
+                        ♥
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                </div>
+
+
+                <!-- NEXT PAGE -->
+
+                <a href="two.html" class="next">
+
+                    continue
+
+                    <span class="next-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="footer">
+                today is yours
+            </div>
+
+
+        </section>
+
+    </main>
+
+</body>
+</html>
